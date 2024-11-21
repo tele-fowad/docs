@@ -25,7 +25,15 @@
     "name": "Dashboard",
     "url": "https://dashboard.mintlify.com"
   },
- 
+
+ "anchors": [
+    {
+      "name": "API Reference",
+      "openapi": "/openai.json",
+      "url": "api-reference",
+      "icon": "square-terminal"
+    }
+  ]
  
   "navigation": [
    {
