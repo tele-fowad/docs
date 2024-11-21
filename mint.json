@@ -29,7 +29,7 @@
  "anchors": [
     {
       "name": "API Reference",
-      "openapi": "/openai.json",
+      "openapi": "./openapi.json",
       "url": "api-reference",
       "icon": "square-terminal"
     }
