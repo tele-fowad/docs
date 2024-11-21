@@ -40,7 +40,6 @@
     {
       "name": "API Endpoints",
       "openapi": "/api-reference/openapi.json",
-      "url": "api-reference/ednpoints",
       "icon": "square-terminal"
     }
   ],
