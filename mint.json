@@ -32,12 +32,6 @@
       "icon": "book-open-cover",
       "url": "https://mintlify.com/docs"
     },
-    {
-      "name": "API Endpoints",
-      "openapi": "https://github.com/tele-fowad/docs/blob/main/openai.json",
-      "url": "api-endpoints",
-      "icon": "square-terminal"
-    }
   ],
   "navigation": [
     {
