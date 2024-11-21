@@ -64,6 +64,12 @@
       ]
     },
     {
+    "group": "API Endpoints",
+    "pages": [
+      "api-endpoints/"
+    ]
+    }
+    {
       "group": "API Documentation",
       "pages": [
         "api-reference/introduction"
