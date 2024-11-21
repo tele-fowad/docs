@@ -31,7 +31,7 @@
       "name": "Documentation",
       "icon": "book-open-cover",
       "url": "https://mintlify.com/docs"
-    },
+    }
   ],
   "navigation": [
     {
@@ -40,7 +40,7 @@
         "introduction",
         "quickstart",
         "development"
-      ],
+      ]
     },
     {
       "group": "Essentials",
