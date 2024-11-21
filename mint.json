@@ -39,7 +39,8 @@
     },
     {
       "name": "API Endpoints",
-      "openapi": "/api-reference/openapi.json",
+      "openapi": "https://github.com/tele-fowad/docs/blob/main/openai.json",
+      "url": "api-endpoints",
       "icon": "square-terminal"
     }
   ],
