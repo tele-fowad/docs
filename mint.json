@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Telepie Docs",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
@@ -21,36 +21,22 @@
       "url": "fowad@telepie.com"
     }
   ],
+  
   "topbarCtaButton": {
     "name": "Dashboard",
     "url": "https://dashboard.mintlify.com"
   },
 
- "anchors": [
+ "tabs": [
     {
       "name": "API Reference",
-      "openapi": "https://cosmicqbit.dev/telepie-api.json",
-      "url": "api-reference/openapi",
-      "icon": "square-terminal"
+      "url": "api-reference",
+      "openapi": "https://petstore3.swagger.io/api/v3/openapi.json"
     }
-  ],
+  ]
  
   "navigation": [
    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoints",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
-      ]
-    },
-    {
       "group": "Get Started",
       "pages": [
         "introduction",
@@ -68,7 +54,22 @@
         "essentials/navigation",
         "essentials/reusable-snippets"
       ]
-    }
+    },
+   {
+      "group": "API Documentation",
+      "pages": [
+        "api-reference/introduction"
+      ]
+    },
+    {
+      "group": "Endpoints",
+      "pages": [
+        "api-reference/endpoint/get",
+        "api-reference/endpoint/create",
+        "api-reference/endpoint/delete"
+      ]
+    },
+   
    
   ],
   "footerSocials": {
