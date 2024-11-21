@@ -1,0 +1,821 @@
+{
+  "openapi": "3.0.0",
+  "info": { "title": "Telepie API", "version": "1.0", "description": "" },
+  "servers": [{ "url": "http://sms.telepie.com" }],
+  "paths": {
+    "/v1/sms": {
+      "post": {
+        "summary": "OTP",
+        "operationId": "OTP",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "message": { "type": "string" },
+                    "result": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "phone": { "type": "string" },
+                          "transaction_id": { "type": "string" },
+                          "error": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Success Response": {
+                    "value": {
+                      "success": true,
+                      "message": "Request process successfully",
+                      "results": [
+                        { "phone": "987xxx", "transaction_id": "", "error": "" }
+                      ]
+                    }
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": { "type": "object", "properties": [] }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": { "type": "string" },
+                          "codeMsg": { "type": "string" },
+                          "message": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Error Response": {
+                    "value": {
+                      "success": false,
+                      "errors": [
+                        { "code": "xxx", "codeMsg": "", "message": "" }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "",
+        "parameters": [
+          {
+            "schema": { "type": "string" },
+            "in": "query",
+            "name": "api_key",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["to", "message", "route", "sender_id"],
+                "properties": {
+                  "to": { "type": "array", "items": { "type": "number" } },
+                  "message": { "type": "string" },
+                  "route": { "type": "string" },
+                  "sender_id": { "type": "string" },
+                  "template_id": { "type": "string" },
+                  "pr1": {
+                    "type": "string",
+                    "description": "Custom Parameter 1 (Optional)"
+                  },
+                  "pr2": {
+                    "type": "string",
+                    "description": "Custom Parameter 2 (Optional)"
+                  },
+                  "pr3": {
+                    "type": "string",
+                    "description": "Custom Parameter 3 (Optional)"
+                  },
+                  "pr4": {
+                    "type": "string",
+                    "description": "Custom Parameter 4 (Optional)"
+                  },
+                  "pr5": {
+                    "type": "string",
+                    "description": "Custom Parameter 5 (Optional)"
+                  }
+                }
+              },
+              "examples": {
+                "Example Body": {
+                  "value": {
+                    "to": [9999999999],
+                    "message": "This is a test message",
+                    "route": "otp",
+                    "sender_id": "0123456",
+                    "template_id": "A5FyX1bMg"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Sample Body (OTP)"
+        }
+      },
+      "parameters": []
+    },
+    "/v1/sms?api_key": {
+      "post": {
+        "summary": "TRANSACTIONAL",
+        "operationId": "TRANSACTIONAL",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "message": { "type": "string" },
+                    "result": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "phone": { "type": "string" },
+                          "transaction_id": { "type": "string" },
+                          "error": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Success Response": {
+                    "value": {
+                      "success": true,
+                      "message": "Request process successfully",
+                      "results": [
+                        { "phone": "987xxx", "transaction_id": "", "error": "" }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": { "type": "string" },
+                          "codeMsg": { "type": "string" },
+                          "message": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Error Response": {
+                    "value": {
+                      "success": false,
+                      "errors": [
+                        { "code": "xxx", "codeMsg": "", "message": "" }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "",
+        "parameters": [
+          {
+            "schema": { "type": "string" },
+            "in": "query",
+            "name": "api_key",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["to", "message", "route", "sender_id"],
+                "properties": {
+                  "to": { "type": "array", "items": { "type": "number" } },
+                  "message": { "type": "string" },
+                  "route": { "type": "string" },
+                  "sender_id": { "type": "string" },
+                  "template_id": { "type": "string" },
+                  "pr1": {
+                    "type": "string",
+                    "description": "Custom Parameter 1 (Optional)"
+                  },
+                  "pr2": {
+                    "type": "string",
+                    "description": "Custom Parameter 2 (Optional)"
+                  },
+                  "pr3": {
+                    "type": "string",
+                    "description": "Custom Parameter 3 (Optional)"
+                  },
+                  "pr4": {
+                    "type": "string",
+                    "description": "Custom Parameter 4 (Optional)"
+                  },
+                  "pr5": {
+                    "type": "string",
+                    "description": "Custom Parameter 5 (Optional)"
+                  }
+                }
+              },
+              "examples": {
+                "Example Body": {
+                  "value": {
+                    "to": [9999999999],
+                    "message": "This is a test message",
+                    "route": "transactional",
+                    "sender_id": "0123456",
+                    "template_id": "A5FyX1bMg"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Sample Body (TRANSACTIONAL)"
+        }
+      },
+      "parameters": []
+    },
+    "/v1/sms?api_key=": {
+      "post": {
+        "summary": "PROMOTIONAL",
+        "operationId": "PROMOTIONAL",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "string" },
+                    "message": { "type": "string" },
+                    "": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "phone": { "type": "string" },
+                          "transaction_id": { "type": "string" },
+                          "error": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Error Response": {
+                    "value": {
+                      "success": true,
+                      "message": "Request process successfully",
+                      "results": [
+                        { "phone": "987xxx", "transaction_id": "", "error": "" }
+                      ]
+                    }
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": { "type": "object", "properties": [] }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": { "type": "string" },
+                          "codeMsg": { "type": "string" },
+                          "message": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Error Response": {
+                    "value": {
+                      "success": false,
+                      "errors": [
+                        { "code": "xxx", "codeMsg": "", "message": "" }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "",
+        "parameters": [
+          {
+            "schema": { "type": "string" },
+            "in": "query",
+            "required": true,
+            "name": "api_key"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["to", "message", "route", "sender_id"],
+                "properties": {
+                  "to": { "type": "array", "items": { "type": "number" } },
+                  "message": { "type": "string" },
+                  "route": { "type": "string" },
+                  "sender_id": { "type": "string" },
+                  "template_id": { "type": "string" },
+                  "pr1": {
+                    "type": "string",
+                    "description": "Custom Parameter 1 (Optional)"
+                  },
+                  "pr2": {
+                    "type": "string",
+                    "description": "Custom Parameter 2 (Optional)"
+                  },
+                  "pr3": {
+                    "type": "string",
+                    "description": "Custom Parameter 3 (Optional)"
+                  },
+                  "pr4": {
+                    "type": "string",
+                    "description": "Custom Parameter 4 (Optional)"
+                  },
+                  "pr5": {
+                    "type": "string",
+                    "description": "Custom Parameter 5 (Optional)"
+                  }
+                }
+              },
+              "examples": {
+                "Example Body": {
+                  "value": {
+                    "to": [9999999999],
+                    "message": "This is a test message",
+                    "route": "promotional",
+                    "sender_id": "0123456",
+                    "template_id": "A5FyX1bMg"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Sample Body (PROMOTIONAL)"
+        }
+      },
+      "parameters": []
+    },
+    "/v1/sms/countrycode": {
+      "post": {
+        "summary": "GLOBAL",
+        "operationId": "GLOBAL",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "string" },
+                    "message": { "type": "string" },
+                    "": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "phone": { "type": "string" },
+                          "transaction_id": { "type": "string" },
+                          "error": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Error Response": {
+                    "value": {
+                      "success": true,
+                      "message": "Request process successfully",
+                      "results": [
+                        { "phone": "987xxx", "transaction_id": "", "error": "" }
+                      ]
+                    }
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": { "type": "object", "properties": [] }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": { "type": "string" },
+                          "codeMsg": { "type": "string" },
+                          "message": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Error Response": {
+                    "value": {
+                      "success": false,
+                      "errors": [
+                        { "code": "xxx", "codeMsg": "", "message": "" }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "",
+        "parameters": [
+          {
+            "schema": { "type": "string" },
+            "in": "query",
+            "required": true,
+            "name": "api_key"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["to", "message", "route", "sender_id"],
+                "properties": {
+                  "to": { "type": "array", "items": { "type": "string" } },
+                  "message": { "type": "string" },
+                  "route": { "type": "string" },
+                  "sender_id": { "type": "string" },
+                  "template_id": { "type": "string" },
+                  "pr1": {
+                    "type": "string",
+                    "description": "Custom Parameter 1 (Optional)"
+                  },
+                  "pr2": {
+                    "type": "string",
+                    "description": "Custom Parameter 2 (Optional)"
+                  },
+                  "pr3": {
+                    "type": "string",
+                    "description": "Custom Parameter 3 (Optional)"
+                  },
+                  "pr4": {
+                    "type": "string",
+                    "description": "Custom Parameter 4 (Optional)"
+                  },
+                  "pr5": {
+                    "type": "string",
+                    "description": "Custom Parameter 5 (Optional)"
+                  }
+                }
+              },
+              "examples": {
+                "Example Body": {
+                  "value": {
+                    "to": ["+919999999999"],
+                    "message": "This is a test message",
+                    "route": "global",
+                    "sender_id": "ABCDEEF",
+                    "template_id": "ABCDEEF"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Sample Body (GLOBAL)"
+        }
+      },
+      "parameters": []
+    },
+    "/v1/sms/logs": {
+      "get": {
+        "summary": "SMS Logs",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "logs": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": { "type": "string" },
+                          "account_id": { "type": "string" },
+                          "campaign_id": { "type": "string" },
+                          "message_id": { "type": "string" },
+                          "message": { "type": "string" },
+                          "to": { "type": "string" },
+                          "status": { "type": "string" },
+                          "channel": { "type": "string" },
+                          "route": { "type": "integer" },
+                          "sender_id": { "type": "string" },
+                          "error": { "type": "string" },
+                          "msg_length": { "type": "integer" },
+                          "sms_count": { "type": "integer" },
+                          "is_unicode": { "type": "integer" },
+                          "error_code": { "type": "string" },
+                          "created_at": { "type": "string" },
+                          "dlt": { "type": "string" }
+                        }
+                      }
+                    },
+                    "routes": { "type": "object" }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "logs": [
+                        {
+                          "id": "1730600931507424",
+                          "account_id": "000000000000000000000000",
+                          "campaign_id": "000000000000000000000000",
+                          "message_id": "S0701631710171931397515525",
+                          "message": "Account activated successfully",
+                          "to": "9999999999",
+                          "status": "delivered",
+                          "channel": "sms",
+                          "route": 2,
+                          "sender_id": "TSIGNL",
+                          "error": "",
+                          "msg_length": 30,
+                          "sms_count": 1,
+                          "is_unicode": 0,
+                          "error_code": "",
+                          "created_at": "2020-11-10T11:49:31.488Z",
+                          "dlt": "2020-11-10T11:49:36.206Z"
+                        }
+                      ],
+                      "routes": {
+                        "1": "otp",
+                        "2": "promotional",
+                        "3": "transactional"
+                      },
+                      "success": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "description": "Bad Request" }
+        },
+        "operationId": "get-v1-sms-logs",
+        "description": "To find status of SMS",
+        "parameters": [
+          {
+            "schema": { "type": "string" },
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "description": "API Key for authentication"
+          },
+          {
+            "schema": { "type": "string" },
+            "in": "query",
+            "name": "id",
+            "description": "Log ID returned by the API when sending a SMS"
+          },
+          {
+            "schema": { "type": "string" },
+            "in": "query",
+            "name": "message_id",
+            "description": "Message ID returned by the operator"
+          }
+        ]
+      }
+    },
+    "/v1/accounts/credits": {
+      "get": {
+        "summary": "Account Credits",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "credits": {
+                      "type": "object",
+                      "properties": {
+                        "otp": {
+                          "type": "object",
+                          "properties": {
+                            "used": { "type": "integer" },
+                            "total": { "type": "integer" },
+                            "remaining": { "type": "integer" }
+                          }
+                        },
+                        "promotional": {
+                          "type": "object",
+                          "properties": {
+                            "used": { "type": "integer" },
+                            "total": { "type": "integer" },
+                            "remaining": { "type": "integer" }
+                          }
+                        },
+                        "transactional": {
+                          "type": "object",
+                          "properties": {
+                            "used": { "type": "integer" },
+                            "total": { "type": "integer" },
+                            "remaining": { "type": "integer" }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": { "type": "string" },
+                          "codeMsg": { "type": "string" },
+                          "message": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-v1-accounts-credits",
+        "description": "This endpoint will return the account credits",
+        "parameters": [
+          {
+            "schema": { "type": "string" },
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "description": "API Key for authentication"
+          }
+        ]
+      }
+    },
+    "/v1/globalpricing": {
+      "get": {
+        "summary": "Global Pricing",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "pricelist": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "dial_code": { "type": "string" },
+                          "country_code": { "type": "string" },
+                          "pricing": { "type": "number" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean" },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "code": { "type": "string" },
+                          "codeMsg": { "type": "string" },
+                          "message": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-global-pricing",
+        "description": "This endpoint will return the pricelist of sending sms in different countries in Euros",
+        "parameters": [
+          {
+            "schema": { "type": "string" },
+            "in": "query",
+            "name": "api_key",
+            "required": true,
+            "description": "API Key for authentication"
+          }
+        ]
+      }
+    }
+  },
+  "components": { "schemas": [], "securitySchemes": [] },
+  "security": []
+}
