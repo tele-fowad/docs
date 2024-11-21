@@ -66,7 +66,7 @@
     {
     "group": "API Endpoints",
     "pages": [
-      "api-endpoints/"
+      "api-reference/openapi.json"
     ]
     }
     {
