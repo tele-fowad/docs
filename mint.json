@@ -15,66 +15,94 @@
       "to": "#07C983"
     }
   },
-  
+
+  "topbar": {
+    "style": "gradient"
+  },
+
   "topbarLinks": [
     {
-      "name": "Email",
+      "name": "Support",
       "url": "fowad@telepie.com"
     }
   ],
-  
+
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://dashboard.mintlify.com",
+    "style": "roundedRectangle"
   },
 
- "tabs": [
+  "versions": ["v1.0"],
+
+  "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference",
-      "openapi": "https://cosmicqbit.dev/teleapi.json"
+      "name": "Example API",
+      "url": "example-api",
+      "openapi": "https://petstore3.swagger.io/api/v3/openapi.json"
     }
   ],
 
   "navigation": [
-   {
+    {
       "group": "Get Started",
-      "pages": [
-        "introduction",
-        "quickstart",
-        "development"
-      ]
+      "pages": ["introduction"]
     },
     {
-      "group": "Essentials",
-      "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
-      ]
-    },
-   {
       "group": "API Documentation",
+      "pages": ["api-reference/introduction"]
+    },
+    {
+      "group": "SMS Campaign",
       "pages": [
-        "api-reference/introduction"
+        "api-reference/campaigns/sms/OTP",
+        "api-reference//campaigns/sms/sms-logs",
+        "api-reference/campaigns/sms/send-sms-get"
       ]
     },
     {
-      "group": "Endpoints",
+      "group": "RCS Campaign",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "api-reference/campaigns/rcs/get-template-variables",
+        "api-reference/campaigns/rcs/send-rcs-template"
       ]
+    },
+    {
+      "group": "WhatsApp Campaign",
+      "pages": [
+        "api-reference/campaigns/whatsapp/get-template-list",
+        "api-reference/campaigns/whatsapp/get-whatsapp-accounts",
+        "api-reference/campaigns/whatsapp/send-whatsapp-message"
+      ]
+    },
+    {
+      "group": "Email Campaign",
+      "pages": ["api-reference/campaigns/email/send-email"]
     }
   ],
-  
+
+  "api": {
+    "baseUrl": "https://api.telepie.com/v1/",
+    "playground": {
+      "mode": "show"
+    },
+    "auth": {
+      "method": "key",
+      "name": "x-api-key"
+    }
+  },
+
+  "seo": {
+    "indexHiddenPages": true
+  },
+
+  "feedback": {
+    "thumbsRating": true
+  },
+
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "x": "https://x.com/telepie",
+    "facebook": "https://www.facebook.com/telepie",
+    "linkedin": "https://www.linkedin.com/company/telepietechnology/"
   }
 }

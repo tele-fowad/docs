@@ -1,0 +1,18 @@
+---
+title: SMS Logs
+description: "Find out more about Telepie's SMS Logs API."
+api: "GET /v1/sms/"
+playground: true
+---
+
+<ParamField path="id" type="string">
+  Log ID returned by the API when sending a SMS
+</ParamField>
+
+<ParamField path="message_id" type="string">
+  Message ID returned by the operator
+</ParamField>
+
+<ResponseField name="response" type="string" required>
+  A response for 200 status code
+</ResponseField>
