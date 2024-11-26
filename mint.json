@@ -54,9 +54,8 @@
     {
       "group": "WhatsApp Campaign",
       "pages": [
-        "api-reference/campaigns/whatsapp/get-template-list",
-        "api-reference/campaigns/whatsapp/get-whatsapp-accounts",
-        "api-reference/campaigns/whatsapp/send-whatsapp-message"
+        "api-reference/campaigns/whatsapp/intro",
+        "api-reference/campaigns/whatsapp/message-api/send-text-message"
       ]
     },
     {
@@ -104,13 +103,15 @@
   },
 
   "feedback": {
+    "thumbsRating": true,
     "suggestEdit": true,
-    "thumbsRating": true
+    "raiseIssue": true
   },
 
   "footerSocials": {
     "x": "https://x.com/telepie",
     "facebook": "https://www.facebook.com/telepie",
-    "linkedin": "https://www.linkedin.com/company/telepietechnology/"
+    "linkedin": "https://www.linkedin.com/company/telepietechnology/",
+    "github": "https://github.com/telepie/telepie-docs"
   }
 }

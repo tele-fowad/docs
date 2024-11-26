@@ -1,0 +1,34 @@
+---
+title: "Introduction"
+description: "Learn how to send WhatsApp messages using the Telepie API."
+icon: "whatsapp"
+---
+
+<Note>
+  The WhatsApp API allows you to send WhatsApp messages using the Telepie API.
+  You can send WhatsApp messages to a specific number or a group of numbers.
+</Note>
+
+### Allowed HTTP Request
+
+1. GET
+2. POST
+
+### Allowed Data Format
+
+1. Plain/Text
+2. JSON
+
+### Description of usual server responses
+
+- 200 OK - the request was successful.
+- 201 Created - the request was successful and a resource was created.
+- 204 No Content - the request was successful but there is no
+  representation to return(i.e. the response is empty).
+- 400 Bad Request - the request could not be understood or was
+  missing required parameters.
+- 401 Unauthorized - authentication failed or user doesn't
+  have permissions for requested operation.
+- 403 Forbidden - access denied.
+- 404 Not Found - resource was not found.
+- 405 Method Not Allowed - requested method is not supported for resources.
