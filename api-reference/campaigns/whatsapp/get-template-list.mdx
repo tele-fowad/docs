@@ -4,3 +4,29 @@ description: "Retrieve the list of templates associated with a bot."
 api: "GET /api/campaign/rcs/whatsapp/templates/{phoneId}"
 playground: true
 ---
+
+<ResponseField name="response" type="string" required>
+  A response field example
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+  curl --request POST \
+    --url https://dog-api.kinduff.com/api/facts
+    --header 'Authorization: Bearer YOUR_API_KEY'
+    --header 'Content-Type: application/json'
+    --data '{
+      "name": "Dog API"
+    }
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{ "status": "success" }
+```
+
+</ResponseExample>

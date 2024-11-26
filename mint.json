@@ -16,6 +16,8 @@
     }
   },
 
+  "versions": ["v1.0"],
+
   "topbar": {
     "style": "gradient"
   },
@@ -33,24 +35,21 @@
     "style": "roundedRectangle"
   },
 
-  "versions": ["v1.0"],
+  "primaryTab": {
+    "name": "Home"
+  },
 
   "tabs": [
     {
-      "name": "Example API",
-      "url": "example-api",
-      "openapi": "https://petstore3.swagger.io/api/v3/openapi.json"
+      "name": "WebHooks",
+      "url": "webhooks"
     }
   ],
 
   "navigation": [
     {
-      "group": "Get Started",
-      "pages": ["introduction"]
-    },
-    {
       "group": "API Documentation",
-      "pages": ["api-reference/introduction"]
+      "pages": ["introduction", "api-reference/api-key-auth"]
     },
     {
       "group": "SMS Campaign",
@@ -77,7 +76,14 @@
     },
     {
       "group": "Email Campaign",
-      "pages": ["api-reference/campaigns/email/send-email"]
+      "pages": [
+        "api-reference/campaigns/email/send-email",
+        "api-reference/campaigns/email/upload-attachment"
+      ]
+    },
+    {
+      "group": "Webhooks",
+      "pages": ["webhooks/index"]
     }
   ],
 

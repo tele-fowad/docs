@@ -1,0 +1,22 @@
+---
+title: "API Key Authentication"
+description: "Learn how to authenticate your API requests."
+icon: "key"
+---
+
+API Key Authentication is a straightforward method for securing access to the Telepie API’s. You can generate an API key through Telepie’s dashboard, allowing you to define permissions, set expiration dates, and specify IP restrictions if necessary.
+
+<Note>
+  If you're not looking to build API reference documentation, you can delete
+  this section by removing the api-reference folder.
+</Note>
+
+### Using the API Key as a Bearer Token
+
+To authenticate your API requests using the API key as a Bearer token, include it in the Authorization header as follows:
+
+```http
+Authorization: Bearer your_api_key
+```
+
+Replace `your_api_key` with the actual API key you generated.
