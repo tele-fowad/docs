@@ -3,7 +3,7 @@
   "name": "Telepie Docs",
   "logo": {
     "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "light": "/logo/light-new.svg"
   },
   "favicon": "/favicon.svg",
   "colors": {
@@ -55,7 +55,25 @@
       "group": "WhatsApp Campaign",
       "pages": [
         "api-reference/campaigns/whatsapp/intro",
-        "api-reference/campaigns/whatsapp/message-api/send-text-message"
+        {
+          "group": "Send Message",
+          "pages": [
+            "api-reference/campaigns/whatsapp/message-api/send-text-message",
+            "api-reference/campaigns/whatsapp/message-api/send-location-message",
+            "api-reference/campaigns/whatsapp/message-api/send-image-message",
+            "api-reference/campaigns/whatsapp/message-api/send-document-message",
+            "api-reference/campaigns/whatsapp/message-api/send-video-message",
+            "api-reference/campaigns/whatsapp/message-api/send-contact-message",
+            "api-reference/campaigns/whatsapp/message-api/send-interactive-message"
+          ]
+        },
+        {
+          "group": "Payment API",
+          "pages": [
+            "api-reference/campaigns/whatsapp/payment-api/order-details",
+            "api-reference/campaigns/whatsapp/payment-api/order-status"
+          ]
+        }
       ]
     },
     {

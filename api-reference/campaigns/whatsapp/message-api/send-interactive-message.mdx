@@ -1,0 +1,92 @@
+---
+title: "Send Interactive Message"
+sidebarTitle: "Send IA Message "
+description: "This API is used to send Interactive message to the end user."
+api: "POST /api/v3/{phone_number_id}/messages"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the recipient’s phone number in international format (e.g.,
+  “1xxxxxxxxxx”).
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "messaging_product": "whatsapp",
+  "recipient_type": "individual",
+  "to": "{{Recipient phone number}}",
+  "type": "interactive",
+  "interactive": {
+    "type": "list",
+    "header": {
+      "type": "text",
+      "text": "{{text string}}"
+    },
+    "body": {
+      "text": "hello"
+    },
+    "footer": {
+      "text": "FOOTER_TEXT"
+    },
+    "action": {
+      "button": "BUTTON_TEXT",
+      "sections": [
+        {
+          "title": "SECTION_1_TITLE",
+          "rows": [
+            {
+              "id": "SECTION_1_ROW_1_ID",
+              "title": "SECTION_1_ROW_1_TITLE",
+              "description": "SECTION_1_ROW_1_DESCRIPTION"
+            },
+            {
+              "id": "SECTION_1_ROW_2_ID",
+              "title": "SECTION_1_ROW_2_TITLE",
+              "description": "SECTION_1_ROW_2_DESCRIPTION"
+            }
+          ]
+        },
+        {
+          "title": "SECTION_2_TITLE",
+          "rows": [
+            {
+              "id": "SECTION_2_ROW_1_ID",
+              "title": "SECTION_2_ROW_1_TITLE",
+              "description": "SECTION_2_ROW_1_DESCRIPTION"
+            },
+            {
+              "id": "SECTION_2_ROW_2_ID",
+              "title": "SECTION_2_ROW_2_TITLE",
+              "description": "SECTION_2_ROW_2_DESCRIPTION"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+```json SampleResponse.json
+{
+  "messaging_product": "whatsapp",
+  "contacts": [
+    {
+      "input": "9175XXXXXXXX",
+      "wa_id": "9175XXXXXXXX"
+    }
+  ],
+  "messages": [
+    {
+      "id": "wamid.HBgMOTE3OTcyODkyNzEyFQIAERgSQUM3MzRCRjdFREYzOENDNTgwAA="
+    }
+  ]
+}
+```
+
+</CodeGroup>

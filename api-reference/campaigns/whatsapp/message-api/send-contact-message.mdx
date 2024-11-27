@@ -1,0 +1,90 @@
+---
+title: "Send Contact"
+description: "This API is used to send contact to the end user."
+api: "POST /api/v3/{phone_number_id}/messages"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the recipient’s phone number in international format (e.g.,
+  “1xxxxxxxxxx”).
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "messaging_product": "whatsapp",
+  "to": "{{Recipient-Phone-Number}}",
+  "type": "contacts",
+  "contacts": [
+    {
+      "addresses": [
+        {
+          "street": "<ADDRESS_STREET>",
+          "city": "<ADDRESS_CITY>",
+          "state": "<ADDRESS_STATE>",
+          "zip": "<ADDRESS_ZIP>",
+          "country": "<ADDRESS_COUNTRY>",
+          "country_code": "<ADDRESS_COUNTRY_CODE>",
+          "type": "<HOME|WORK>"
+        }
+      ],
+      "birthday": "<CONTACT_BIRTHDAY>",
+      "emails": [
+        {
+          "email": "<CONTACT_EMAIL>",
+          "type": "<WORK|HOME>"
+        }
+      ],
+      "name": {
+        "formatted_name": "<CONTACT_FORMATTED_NAME>",
+        "first_name": "<CONTACT_FIRST_NAME>",
+        "last_name": "<CONTACT_LAST_NAME>",
+        "middle_name": "<CONTACT_MIDDLE_NAME>",
+        "suffix": "<CONTACT_SUFFIX>",
+        "prefix": "<CONTACT_PREFIX>"
+      },
+      "org": {
+        "company": "<CONTACT_ORG_COMPANY>",
+        "department": "<CONTACT_ORG_DEPARTMENT>",
+        "title": "<CONTACT_ORG_TITLE>"
+      },
+      "phones": [
+        {
+          "phone": "<CONTACT_PHONE>",
+          "wa_id": "<CONTACT_WA_ID>",
+          "type": "<HOME|WORK>"
+        }
+      ],
+      "urls": [
+        {
+          "url": "<CONTACT_URL>",
+          "type": "<HOME|WORK>"
+        }
+      ]
+    }
+  ]
+}
+```
+
+```json SampleResponse.json
+{
+  "messaging_product": "whatsapp",
+  "contacts": [
+    {
+      "input": "9175XXXXXXXX",
+      "wa_id": "9175XXXXXXXX"
+    }
+  ],
+  "messages": [
+    {
+      "id": "wamid.HBgMOTE3OTcyODkyNzEyFQIAERgSQUM3MzRCRjdFREYzOENDNTgwAA="
+    }
+  ]
+}
+```
+
+</CodeGroup>

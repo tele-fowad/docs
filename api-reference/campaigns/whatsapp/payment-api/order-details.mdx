@@ -1,0 +1,102 @@
+---
+title: "Order Details"
+description: "This API is used to send order details to the end user."
+api: "POST /api/v3/{phone_number_id}/messages"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the recipient’s phone number in international format (e.g.,
+  “1xxxxxxxxxx”).
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "messaging_product": "whatsapp",
+  "to": "{{Recipient phone number}}",
+  "type": "interactive",
+  "recipient_type": "individual",
+  "interactive": {
+    "type": "order_details",
+    "body": {
+      "text": "Test payment"
+    },
+    "header": {
+      "type": "{{Media-type}}",
+      "image": {
+        "link": "{{Media-Url}}"
+      }
+    },
+    "action": {
+      "name": "review_and_pay",
+      "parameters": {
+        "reference_id": "EZV2023032712042512044720",
+        "type": "digital-goods",
+        "currency": "INR",
+        "total_amount": {
+          "value": 100,
+          "offset": 100
+        },
+        "payment_settings": [
+          {
+            "type": "payment_gateway",
+            "payment_gateway": {
+              "type": "razorpay / payu",
+              "configuration_name": "payment-config-id"
+            }
+          }
+        ],
+        "order": {
+          "status": "pending",
+          "items": [
+            {
+              "retailer_id": "R1",
+              "product_id": "product-id",
+              "name": "Test Payment Rs. 1",
+              "amount": {
+                "value": 100,
+                "offset": 100
+              },
+              "quantity": 1
+            }
+          ],
+          "subtotal": {
+            "value": 100,
+            "offset": 100
+          },
+          "tax": {
+            "value": 0,
+            "offset": 100
+          }
+        }
+      }
+    },
+    "footer": {
+      "text": "{{text}}"
+    }
+  }
+}
+```
+
+```json SampleResponse.json
+{
+  "messaging_product": "whatsapp",
+  "contacts": [
+    {
+      "input": "9175XXXXXXXX",
+      "wa_id": "9175XXXXXXXX"
+    }
+  ],
+  "messages": [
+    {
+      "id": "wamid.HBgMOTE3OTcyODkyNzEyFQIAERgSQUM3MzRCRjdFREYzOENDNTgwAA="
+    }
+  ]
+}
+```
+
+</CodeGroup>

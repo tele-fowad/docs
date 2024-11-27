@@ -1,0 +1,59 @@
+---
+title: "Order Status"
+description: "This API is used to send order status to the end user."
+api: "POST /api/v3/{phone_number_id}/messages"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the recipient’s phone number in international format (e.g.,
+  “1xxxxxxxxxx”).
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "messaging_product": "whatsapp",
+  "recipient_type": "individual",
+  "to": "{{Recipient number}}",
+  "type": "interactive",
+  "interactive": {
+    "type": "order_status",
+    "body": {
+      "text": "{{body-text}}"
+    },
+    "action": {
+      "name": "review_order",
+      "parameters": {
+        "reference_id": "1567894_hgdyuagcyatudsdighyu",
+        "order": {
+          "status": "canceled",
+          "description": "failed status"
+        }
+      }
+    }
+  }
+}
+```
+
+```json SampleResponse.json
+{
+  "messaging_product": "whatsapp",
+  "contacts": [
+    {
+      "input": "9175XXXXXXXX",
+      "wa_id": "9175XXXXXXXX"
+    }
+  ],
+  "messages": [
+    {
+      "id": "wamid.HBgMOTE3OTcyODkyNzEyFQIAERgSQUM3MzRCRjdFREYzOENDNTgwAA="
+    }
+  ]
+}
+```
+
+</CodeGroup>

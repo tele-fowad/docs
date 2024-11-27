@@ -1,0 +1,48 @@
+---
+title: "Send Document"
+description: "This API is used to send document to the end user."
+api: "POST /api/v3/{phone_number_id}/messages"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the recipient’s phone number in international format (e.g.,
+  “1xxxxxxxxxx”).
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "messaging_product": "whatsapp",
+  "preview_url": false,
+  "recipient_type": "individual",
+  "to": "{{Recipient-Phone-Number}}",
+  "type": "document",
+  "document": {
+    "link": "{{document URL}}",
+    "caption": "{{text message}}"
+  }
+}
+```
+
+```json SampleResponse.json
+{
+  "messaging_product": "whatsapp",
+  "contacts": [
+    {
+      "input": "9175XXXXXXXX",
+      "wa_id": "9175XXXXXXXX"
+    }
+  ],
+  "messages": [
+    {
+      "id": "wamid.HBgMOTE3OTcyODkyNzEyFQIAERgSQUM3MzRCRjdFREYzOENDNTgwAA="
+    }
+  ]
+}
+```
+
+</CodeGroup>
