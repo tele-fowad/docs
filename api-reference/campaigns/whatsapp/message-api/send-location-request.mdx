@@ -1,0 +1,53 @@
+---
+title: "Send Location Request Message"
+sidebarTitle: "Location Request"
+description: "This API is used to send the location request message to the end user."
+api: "POST /v3/{phone_number_id}/messages"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the recipient’s phone number in international format (e.g.,
+  “1xxxxxxxxxx”).
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "messaging_product": "whatsapp",
+  "recipient_type": "individual",
+  "type": "interactive",
+  "to": "91XXXXXXXXXX",
+  "interactive": {
+    "type": "location_request_message",
+    "body": {
+      "text": "Let us start with your pickup. You can either manually *enter an address* or *share your current location*."
+    },
+    "action": {
+      "name": "send_location"
+    }
+  }
+}
+```
+
+```json SampleResponse.json
+{
+  "messaging_product": "whatsapp",
+  "contacts": [
+    {
+      "input": "9175XXXXXXXX",
+      "wa_id": "9175XXXXXXXX"
+    }
+  ],
+  "messages": [
+    {
+      "id": "wamid.HBgMOTE3OTcyODkyNzEyFQIAERgSQzAwRDEzNkQ1NDFFNkM3SLKSA=="
+    }
+  ]
+}
+```
+
+</CodeGroup>

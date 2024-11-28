@@ -1,0 +1,58 @@
+---
+title: "Send Address Message"
+sidebarTitle: "Address Message"
+description: "This API is used to send the address message to the end user."
+api: "POST /v3/{phone_number_id}/messages"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the recipient’s phone number in international format (e.g.,
+  “1xxxxxxxxxx”).
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "messaging_product": "whatsapp",
+  "recipient_type": "individual",
+  "to": "91XXXXXXXXXX",
+  "type": "interactive",
+  "interactive": {
+    "type": "address_message",
+    "body": {
+      "text": "Thanks for your order! Tell us what address you’d like this order delivered to."
+    },
+    "action": {
+      "name": "address_message",
+      "parameters": {
+        "country": "COUNTRY_ISO_CODE"
+      }
+    }
+  }
+}
+```
+
+```json SampleResponse.json
+{
+  "messaging_product": "whatsapp",
+  "contacts": [
+    {
+      "input": "9175XXXXXXXX",
+      "wa_id": "9175XXXXXXXX"
+    }
+  ],
+  "messages": [
+    {
+      "id": "wamid.HBgMOTE3OTcyODkyNzEyFQIAERgSQzAwRDEzNkQ1NDFFNkM3SLKSA=="
+    }
+  ]
+}
+```
+
+</CodeGroup>
+
+For supported countries [click here](/api-reference/campaigns/whatsapp/intro#supported-countries)

@@ -1,0 +1,100 @@
+---
+title: "Sending Custom Parameters while Sending Messages"
+sidebarTitle: "Sending Custom Parameters"
+description: "This API is used to send the message with custom parameters to the
+end user."
+api: "POST /v3/{phone_number_id}/messages"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the recipient’s phone number in international format (e.g.,
+  “1xxxxxxxxxx”).
+</ParamField>
+
+<ParamField path="biz_opaque_callback_data" type="string">
+  An arbitrary string, useful for tracking.
+
+For example, you could pass the message
+template ID in this field to track your customer's
+journey starting from the first message you send.
+
+You could then track the ROI of different message
+template types to determine the most effective one.
+Any app subscribed to the messages webhook field
+on the WhatsApp Business Account can get this
+string, as it is included in statuses object within
+webhook payloads.
+
+Cloud API does not process this field, it just returns
+it as part of sent/delivered/read message
+webhooks.
+
+Maximum 512 characters.
+
+</ParamField>
+
+```json SampleRequest.json
+{
+  "messaging_product": "whatsapp",
+  "preview_url": false,
+  "recipient_type": "individual",
+  "to": "{{Recipient-Phone-Number}}",
+  "type": "text",
+  "text": {
+    "body": "Sample-text"
+  },
+  "biz_opaque_callback_data": {
+    "source": "api",
+    "date": "2024-03-01",
+    "uuid": "fuif-0deu-dgyu-5674-jcur-jdu9-89eu"
+  }
+}
+```
+
+This custom parameter - `biz_opaque_callback_data` will be returned in the webhook
+
+```json SampleResponse.json
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "112365665238904",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "91XXXXXXXXXX",
+              "phone_number_id": "10XXXXXXXXXXXXXX"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMOTE3NTA3MDY2MzMxFQIAERgSQzZGNUVFOTgxMUUyMkI3MzVBAA==",
+                "status": "delivered",
+                "timestamp": "1709295133",
+                "recipient_id": "91XXXXXXXXXX",
+                "biz_opaque_callback_data": "{\"source\":\"api\",\"date\":\"2024-03-01\",\"uuid\":\"fuif-0deu-dgyu-5674-jcur-jdu9-89eu\"}",
+                "conversation": {
+                  "id": "a34a10abd87c7badad4d1fc5bafadd71",
+                  "origin": {
+                    "type": "marketing"
+                  }
+                },
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "CBP",
+                  "category": "marketing"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+```

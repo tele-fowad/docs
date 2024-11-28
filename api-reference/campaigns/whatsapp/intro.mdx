@@ -32,3 +32,24 @@ icon: "whatsapp"
 - 403 Forbidden - access denied.
 - 404 Not Found - resource was not found.
 - 405 Method Not Allowed - requested method is not supported for resources.
+
+## Supported Countries
+
+Currently [address messages](/api-reference/campaigns/whatsapp/message-api/send-address-message)
+are supported in **India & Singapore** . Below table outlines which fields are supported in which country specifically.
+
+| Field Name    | Display Label           | Input Type | Supported Countries | Limitations              |
+| :------------ | :---------------------- | :--------- | :------------------ | :----------------------- |
+| name          | Name                    | text       | India, Singapore    | None                     |
+| phone_number  | Phone Number            | tel        | India, Singapore    | Valid phone numbers only |
+| in_pin_code   | Pin Code                | text       | India               | Max length: 6            |
+| sg_post_code  | Post Code               | number     | Singapore           | Max length: 6            |
+| house_number  | Flat/House Number       | text       | India               | None                     |
+| floor_number  | Floor Number            | text       | India               | None                     |
+| tower_number  | Tower Number            | text       | India               | None                     |
+| building_name | Building/Apartment Name | text       | India               | None                     |
+| address       | Address                 | text       | India               | None                     |
+| landmark_area | Landmark/Area           | text       | India, Singapore    | None                     |
+| unit_number   | Unit Number             | text       | India               | None                     |
+| city          | City                    | text       | India               | None                     |
+| state         | State                   | text       | India               | None                     |

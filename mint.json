@@ -64,7 +64,10 @@
             "api-reference/campaigns/whatsapp/message-api/send-document-message",
             "api-reference/campaigns/whatsapp/message-api/send-video-message",
             "api-reference/campaigns/whatsapp/message-api/send-contact-message",
-            "api-reference/campaigns/whatsapp/message-api/send-interactive-message"
+            "api-reference/campaigns/whatsapp/message-api/send-interactive-message",
+            "api-reference/campaigns/whatsapp/message-api/send-location-request",
+            "api-reference/campaigns/whatsapp/message-api/send-address-message",
+            "api-reference/campaigns/whatsapp/message-api/sending-custom-parameters"
           ]
         },
         {
@@ -93,7 +96,8 @@
             "api-reference/campaigns/whatsapp/send-templates/coupon-code-template",
             "api-reference/campaigns/whatsapp/send-templates/mpm-template.message",
             "api-reference/campaigns/whatsapp/send-templates/limited-time-offer-template",
-            "api-reference/campaigns/whatsapp/send-templates/carousel-template-without-body-placeholder"
+            "api-reference/campaigns/whatsapp/send-templates/carousel-without-body-placeholder",
+            "api-reference/campaigns/whatsapp/send-templates/carousel-with-body-placeholder"
           ]
         }
       ]
