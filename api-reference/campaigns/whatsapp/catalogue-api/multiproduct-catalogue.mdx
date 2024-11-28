@@ -1,0 +1,93 @@
+---
+title: "Multiple Product Catalogue"
+sidebarTitle: "Multi Product Catalogue"
+description: "This API is used to send the catalogue message for multiple products."
+api: "POST /v3/{phone_number_id}/messages"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the recipient’s phone number in international format (e.g.,
+  “1xxxxxxxxxx”).
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "messaging_product": "whatsapp",
+  "recipient_type": "individual",
+  "to": "{{Recipient number}}",
+  "type": "interactive",
+  "interactive": {
+    "type": "product_list",
+    "header": {
+      "type": "text",
+      "text": "{{text}}"
+    },
+    "body": {
+      "text": "{{text}}"
+    },
+    "footer": {
+      "text": "{{text}}"
+    },
+    "action": {
+      "catalog_id": "{{Catalogue ID}}",
+      "sections": [
+        {
+          "title": "{{title}}",
+          "product_items": [
+            {
+              "product_retailer_id": "{{ID}}"
+            },
+            {
+              "product_retailer_id": "{{ID}}"
+            }
+          ]
+        },
+        {
+          "title": "{{title}}",
+          "product_items": [
+            {
+              "product_retailer_id": "{{ID}}"
+            },
+            {
+              "product_retailer_id": "{{ID}}"
+            },
+            {
+              "product_retailer_id": "{{ID}}"
+            },
+            {
+              "product_retailer_id": "{{ID}}"
+            },
+            {
+              "product_retailer_id": "{{ID}}"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+```json SampleResponse.json
+{
+  "messaging_product": "whatsapp",
+  "contacts": [
+    {
+      "input": "9175XXXXXXXX",
+      "wa_id": "9175XXXXXXXX"
+    }
+  ],
+  "messages": [
+    {
+      "id": "wamid.HBgMOTE3OTcyODkyNzEyFQIAERgSQzAwRDEzNkQ1NDFFNkM3SLKSA=="
+    }
+  ]
+}
+```
+
+</CodeGroup>

@@ -73,6 +73,28 @@
             "api-reference/campaigns/whatsapp/payment-api/order-details",
             "api-reference/campaigns/whatsapp/payment-api/order-status"
           ]
+        },
+        {
+          "group": "Catalogue API",
+          "pages": [
+            "api-reference/campaigns/whatsapp/catalogue-api/single-product-catalogue",
+            "api-reference/campaigns/whatsapp/catalogue-api/multiproduct-catalogue"
+          ]
+        },
+        {
+          "group": "Send Templates",
+          "pages": [
+            "api-reference/campaigns/whatsapp/send-templates/text-template-message",
+            "api-reference/campaigns/whatsapp/send-templates/media-template-message",
+            "api-reference/campaigns/whatsapp/send-templates/interactive-template-message",
+            "api-reference/campaigns/whatsapp/send-templates/interactive-media-template",
+            "api-reference/campaigns/whatsapp/send-templates/media-template-multiple-button",
+            "api-reference/campaigns/whatsapp/send-templates/media-template-multibutton-url-placeholder",
+            "api-reference/campaigns/whatsapp/send-templates/coupon-code-template",
+            "api-reference/campaigns/whatsapp/send-templates/mpm-template.message",
+            "api-reference/campaigns/whatsapp/send-templates/limited-time-offer-template",
+            "api-reference/campaigns/whatsapp/send-templates/carousel-template-without-body-placeholder"
+          ]
         }
       ]
     },
@@ -106,7 +128,7 @@
   ],
 
   "api": {
-    "baseUrl": "https://api.telepie.com/v1/",
+    "baseUrl": "https://partnersv1.pinbot.ai",
     "playground": {
       "mode": "show"
     },

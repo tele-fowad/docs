@@ -1,6 +1,6 @@
 ---
-title: "Send Video"
-description: "This API is used to send video to the end user."
+title: "Single Product Catalogue"
+description: "This API is used to send the catalogue message for a single product."
 api: "POST /v3/{phone_number_id}/messages"
 playground: true
 ---
@@ -17,13 +17,21 @@ playground: true
 ```json SampleRequest.json
 {
   "messaging_product": "whatsapp",
-  "preview_url": false,
   "recipient_type": "individual",
-  "to": "{{Recipient-Phone-Number}}",
-  "type": "video",
-  "video": {
-    "link": "{{video URL}}",
-    "caption": "{{text message}}"
+  "to": "{{Recipient number}}",
+  "type": "interactive",
+  "interactive": {
+    "type": "product",
+    "body": {
+      "text": "text-body-content"
+    },
+    "footer": {
+      "text": "text-footer-content"
+    },
+    "action": {
+      "catalog_id": "{{Catalogue ID}}",
+      "product_retailer_id": "{{Retailer ID}}"
+    }
   }
 }
 ```
@@ -39,7 +47,7 @@ playground: true
   ],
   "messages": [
     {
-      "id": "wamid.HBgMOTE3OTcyODkyNzEyFQIAERgSQUM3MzRCRjdFREYzOENDNTgwAA="
+      "id": "wamid.HBgMOTE3OTcyODkyNzEyFQIAERgSQzAwRDEzNkQ1NDFFNkM3SLKSA=="
     }
   ]
 }

@@ -1,0 +1,93 @@
+---
+title: "Send Interactive Template Message (CTA)"
+sidebarTitle: "IA Template Message"
+description: "This API is used to send the interactive template message to the end user (Call To Action)."
+api: "POST /v3/{phone_number_id}/messages"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the recipient’s phone number in international format (e.g.,
+  “1xxxxxxxxxx”).
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "messaging_product": "whatsapp",
+  "recipient_type": "individual",
+  "to": "{{Recipient number}}",
+  "type": "template",
+  "template": {
+    "name": "template-name",
+    "language": {
+      "code": "language-and-locale-code"
+    },
+    "components": [
+      {
+        "type": "header",
+        "parameters": [
+          {
+            "type": "image",
+            "image": {
+              "link": "http(s)://the-image-url"
+            }
+          }
+        ]
+      },
+      {
+        "type": "body",
+        "parameters": [
+          {
+            "type": "text",
+            "text": "text-string"
+          },
+          {
+            "type": "currency",
+            "currency": {
+              "fallback_value": "$100.99",
+              "code": "USD",
+              "amount_1000": 100990
+            }
+          },
+          {
+            "type": "date_time",
+            "date_time": {
+              "fallback_value": "February 25, 1977",
+              "day_of_week": 5,
+              "year": 1977,
+              "month": 2,
+              "day_of_month": 25,
+              "hour": 15,
+              "minute": 33,
+              "calendar": "GREGORIAN"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+```json SampleResponse.json
+{
+  "messaging_product": "whatsapp",
+  "contacts": [
+    {
+      "input": "9175XXXXXXXX",
+      "wa_id": "9175XXXXXXXX"
+    }
+  ],
+  "messages": [
+    {
+      "id": "wamid.HBgMOTE3OTcyODkyNzEyFQIAERgSQzAwRDEzNkQ1NDFFNkM3SLKSA=="
+    }
+  ]
+}
+```
+
+</CodeGroup>

@@ -1,0 +1,62 @@
+---
+title: "Send Media Template Message with Multiple Buttons"
+sidebarTitle: "Multi Button Media"
+description: "This API is used to send the image template with multiple button messages to the end user."
+api: "POST /v3/{phone_number_id}/messages"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the recipient’s phone number in international format (e.g.,
+  “1xxxxxxxxxx”).
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "to": "91XXXXXXXXXX",
+  "type": "template",
+  "template": {
+    "language": {
+      "code": "en_US"
+    },
+    "name": "multiple_button_template_image01",
+    "components": [
+      {
+        "type": "header",
+        "parameters": [
+          {
+            "type": "image",
+            "image": {
+              "link": "https://farm4.staticflickr.com/3075/3168662394_7d7103de7d_z_d.jpg"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "messaging_product": "whatsapp"
+}
+```
+
+```json SampleResponse.json
+{
+  "messaging_product": "whatsapp",
+  "contacts": [
+    {
+      "input": "9175XXXXXXXX",
+      "wa_id": "9175XXXXXXXX"
+    }
+  ],
+  "messages": [
+    {
+      "id": "wamid.HBgMOTE3OTcyODkyNzEyFQIAERgSQzAwRDEzNkQ1NDFFNkM3SLKSA=="
+    }
+  ]
+}
+```
+
+</CodeGroup>

@@ -1,0 +1,91 @@
+---
+title: "Send Interactive Media Template Message - Quick Reply"
+sidebarTitle: "IA Media Template"
+description: "This API is used to send the interactive media template message to the end user (Call To Action)."
+api: "POST /v3/{phone_number_id}/messages"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the recipient’s phone number in international format (e.g.,
+  “1xxxxxxxxxx”).
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "messaging_product": "whatsapp",
+  "recipient_type": "individual",
+  "to": "{{Recipient number}}",
+  "type": "template",
+  "template": {
+    "language": {
+      "code": "en"
+    },
+    "name": "{{Template Name}}",
+    "components": [
+      {
+        "type": "body",
+        "parameters": [
+          {
+            "type": "text",
+            "text": "{{text string}}"
+          },
+          {
+            "type": "text",
+            "text": "{{text string}}"
+          },
+          {
+            "type": "text",
+            "text": "{{text string}}"
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "sub_type": "quick_reply",
+        "index": 0,
+        "parameters": [
+          {
+            "type": "payload",
+            "payload": "aGlzIHRoaXMgaXMgY29v"
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "sub_type": "quick_reply",
+        "index": 1,
+        "parameters": [
+          {
+            "type": "payload",
+            "payload": "9rwnB8RbYmPF5t2Mn09x4h"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+```json SampleResponse.json
+{
+  "messaging_product": "whatsapp",
+  "contacts": [
+    {
+      "input": "9175XXXXXXXX",
+      "wa_id": "9175XXXXXXXX"
+    }
+  ],
+  "messages": [
+    {
+      "id": "wamid.HBgMOTE3OTcyODkyNzEyFQIAERgSQzAwRDEzNkQ1NDFFNkM3SLKSA=="
+    }
+  ]
+}
+```
+
+</CodeGroup>
