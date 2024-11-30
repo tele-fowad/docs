@@ -1,0 +1,96 @@
+---
+title: "Video Template with Body, Header & Footer"
+sidebarTitle: "Video with Header & Footer"
+description: "This API is used for creating video templates with body, header and footer."
+api: "POST /v3/{wabaid}/message_templates"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="wabaid" type="string" required>
+  Specifies the wabaid of the business account.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "name": "sample_partners_api_img_1_a_1",
+  "category": "MARKETING",
+  "components": [
+    {
+      "type": "header",
+      "format": "video",
+      "example": {
+        "header_handle": [
+          "4::aW1hZ2UvanBlZw==:ARZsON6K-8ukPIq2h95wJ9UUCr439vX2odOWPJ0TjPBISD0WIf04LiFVs--EFJdZjCCI8gOUGXVN_1Vn8rz__q4t6XIc-R7ryeLPAAnQ2bHopw:e:1711980467:1849455295211775:100061459561823:ARY_I5AUJyyOhp-Yzdw"
+        ]
+      }
+    },
+    {
+      "type": "body",
+      "text": "Hey user,\r\nWelcome to Teleservices Pvt Ltd.\r\n\r\nRegards,\r\nTelepie"
+    },
+    {
+      "type": "footer",
+      "text": "Use the button your marketing subscriptions"
+    },
+    {
+      "type": "buttons",
+      "buttons": [
+        {
+          "type": "quick_reply",
+          "text": "Button1"
+        },
+        {
+          "type": "quick_reply",
+          "text": "Button2"
+        },
+        {
+          "type": "quick_reply",
+          "text": "Button3"
+        },
+        {
+          "type": "quick_reply",
+          "text": "Button4"
+        },
+        {
+          "type": "quick_reply",
+          "text": "Button5"
+        },
+        {
+          "type": "quick_reply",
+          "text": "Button6"
+        },
+        {
+          "type": "quick_reply",
+          "text": "Button7"
+        },
+        {
+          "type": "url",
+          "text": "click",
+          "url": "https://farm4.staticflickr.com/3075/3168662394_7d7103de7d_z_d.mp4"
+        },
+        {
+          "type": "phone_number",
+          "text": "Call",
+          "phone_number": "+919921447944"
+        }
+      ]
+    }
+  ],
+  "language": "en_US",
+  "allow_category_change": true
+}
+```
+
+```json SampleResponse.json
+{
+  "id": "123412341234123",
+  "status": "APPROVED",
+  "category": "MARKETING"
+}
+```
+
+</CodeGroup>

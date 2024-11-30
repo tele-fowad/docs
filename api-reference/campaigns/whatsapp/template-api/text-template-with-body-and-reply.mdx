@@ -1,0 +1,73 @@
+---
+title: "Text Template with Body, Header and Quick Reply"
+sidebarTitle: "Text with Body & Reply"
+description: "This API is used for creating text templates with body, header and quick
+reply."
+api: "POST /v3/{wabaid}/message_templates"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="wabaid" type="string" required>
+  Specifies the wabaid of the business account.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "name": "welcome_postman_new_sne124",
+  "category": "MARKETING",
+  "components": [
+    {
+      "type": "BODY",
+      "text": "Dear {{1}}, Thank you for registering with Telepie and providing consent to receive notifications using WhatsApp. \\r\\n\\r\\nWe request you to kindly save this number.\\r\\n\\r\\nTo get started, please type help*.\\r\\nYou can reply with STOP* anytime you wish to stop communication through this channel.\\r\\nRegards,\\r\\n{{2}}{{2}}",
+      "example": {
+        "body_text": [["User1", "Telepie"]]
+      }
+    },
+    {
+      "type": "HEADER",
+      "format": "TEXT",
+      "text": "Welcome{{1}}",
+      "example": {
+        "header_text": ["header-text"]
+      }
+    },
+    {
+      "type": "FOOTER",
+      "text": "welcome to Telepie"
+    },
+    {
+      "type": "BUTTONS",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "button1"
+        },
+        {
+          "type": "QUICK_REPLY",
+          "text": "button2"
+        },
+        {
+          "type": "QUICK_REPLY",
+          "text": "button3"
+        }
+      ]
+    }
+  ],
+  "language": "en_US",
+  "allow_category_change": true
+}
+```
+
+```json SampleResponse.json
+{
+  "id": "123412341234123",
+  "status": "APPROVED",
+  "category": "MARKETING"
+}
+```
+
+</CodeGroup>

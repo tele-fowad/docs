@@ -99,6 +99,21 @@
             "api-reference/campaigns/whatsapp/send-templates/carousel-without-body-placeholder",
             "api-reference/campaigns/whatsapp/send-templates/carousel-with-body-placeholder"
           ]
+        },
+        {
+          "group": "Template API",
+          "pages": [
+            "api-reference/campaigns/whatsapp/template-api/text-template-with-body-and-reply",
+            "api-reference/campaigns/whatsapp/template-api/text-template-with-body-and-footer",
+            "api-reference/campaigns/whatsapp/template-api/text-template-with-body-website-and-phone",
+            "api-reference/campaigns/whatsapp/template-api/image-template-with-body-header-footer",
+            "api-reference/campaigns/whatsapp/template-api/image-template-with-body-header-footer-visit-website-call",
+            "api-reference/campaigns/whatsapp/template-api/image-template-with-body-header-footer-replay",
+            "api-reference/campaigns/whatsapp/template-api/doc-template-with-body-header-footer",
+            "api-reference/campaigns/whatsapp/template-api/doc-template-with-body-header-footer-visit-website-call",
+            "api-reference/campaigns/whatsapp/template-api/doc-template-with-body-header-footer-reply",
+            "api-reference/campaigns/whatsapp/template-api/video-with-body-header-footer"
+          ]
         }
       ]
     },
