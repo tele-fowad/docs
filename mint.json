@@ -112,7 +112,10 @@
             "api-reference/campaigns/whatsapp/template-api/doc-template-with-body-header-footer",
             "api-reference/campaigns/whatsapp/template-api/doc-template-with-body-header-footer-visit-website-call",
             "api-reference/campaigns/whatsapp/template-api/doc-template-with-body-header-footer-reply",
-            "api-reference/campaigns/whatsapp/template-api/video-with-body-header-footer"
+            "api-reference/campaigns/whatsapp/template-api/video-with-body-header-footer",
+            "api-reference/campaigns/whatsapp/template-api/vidoe-with-body-head-foot-website-call",
+            "api-reference/campaigns/whatsapp/template-api/video-with-body-head-foot-reply",
+            "api-reference/campaigns/whatsapp/template-api/image-temp-with-multiple-buttons"
           ]
         }
       ]
