@@ -1,0 +1,86 @@
+---
+title: "Image Carousel Template without Body Placeholder"
+sidebarTitle: "Image Carousel without Body Placeholder"
+description: "This API is used for creating image carousel templates without body
+placeholder"
+api: "POST /v3/{wabaid}/message_templates"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="wabaid" type="string" required>
+  Specifies the wabaid of the business account.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "name": "testv2_carouselimgsm1a1",
+  "language": "en_US",
+  "category": "MARKETING",
+  "allow_category_change": true,
+  "components": [
+    {
+      "type": "body",
+      "text": "hii from Telepie, winter is Use code {{1}} to get {{2}} off order.",
+      "example": {
+        "body_text": [["15OFF", "15%"]]
+      }
+    },
+    {
+      "type": "CAROUSEL",
+      "cards": [
+        {
+          "components": [
+            {
+              "type": "header",
+              "format": "image",
+              "example": {
+                "header_handle": [
+                  "4::aW1hZ2UvanBlZw==:ARZsON6K-8ukPIq2h95wJ9UUCr439vX2odOWPJ0TjPBISD0WIf04LiFVs--EFJdZjCCI8gOUGXVN_1Vn8rz__q4t6XIc-R7ryeLPAAnQ2bHopw:e:1711980467:1849455295211775:100061459561823:ARY_I5AUJyyOhp-Yzdw"
+                ]
+              }
+            },
+            {
+              "type": "body",
+              "text": "Rare lemons for unique cocktails. Use code {{1}} to get {{2}} off all produce.",
+              "example": {
+                "body_text": [["prasad1", "Hajare1"]]
+              }
+            },
+            {
+              "type": "buttons",
+              "buttons": [
+                {
+                  "type": "quick_reply",
+                  "text": "Send more like this"
+                },
+                {
+                  "url": "https://www.luckyshrub.com/shop?promo={{1}}",
+                  "example": [
+                    "https://www.luckyshrub.com/shop?promo=summer_lemons_2023"
+                  ],
+                  "type": "url",
+                  "text": "Buy now"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+```json SampleResponse.json
+{
+  "id": "123412341234123",
+  "status": "APPROVED",
+  "category": "MARKETING"
+}
+```
+
+</CodeGroup>

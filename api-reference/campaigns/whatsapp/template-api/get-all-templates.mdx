@@ -1,0 +1,106 @@
+---
+title: "Get All Templates"
+sidebarTitle: "Get All Templates"
+description: "This API is used to check all the templates for a particular user."
+api: "GET /v3/{wabaid}/message_templates"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="wabaid" type="string" required>
+  Specifies the wabaid of the business account.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleResponse.json
+{
+  "data": [
+    {
+      "name": "ltotemp36013m103",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "Hey User, caribeen ackages!"
+        },
+        {
+          "type": "LIMITED_TIME_OFFER",
+          "limited_time_offer": {
+            "text": "Expiring offer!",
+            "has_expiration": true
+          }
+        },
+        {
+          "type": "BUTTONS",
+          "buttons": [
+            {
+              "type": "COPY_CODE",
+              "text": "Copy offer code",
+              "example": ["CARIBE25"]
+            },
+            {
+              "type": "URL",
+              "text": "Click",
+              "url": "https://www.website.com/{{1}}",
+              "example": ["dynamic-url-example"]
+            },
+            {
+              "type": "PHONE_NUMBER",
+              "text": "call",
+              "phone_number": "+917755991051"
+            }
+          ]
+        }
+      ],
+      "language": "en_US",
+      "status": "APPROVED",
+      "category": "MARKETING",
+      "id": "2883983598406625"
+    },
+    {
+      "name": "ltotemp36013m102",
+      "components": [
+        {
+          "type": "BODY",
+          "text": "Hey User, caribeen ackages!"
+        },
+        {
+          "type": "LIMITED_TIME_OFFER",
+          "limited_time_offer": {
+            "text": "Expiring offer!",
+            "has_expiration": true
+          }
+        },
+        {
+          "type": "BUTTONS",
+          "buttons": [
+            {
+              "type": "COPY_CODE",
+              "text": "Copy offer code",
+              "example": ["CARIBE25"]
+            },
+            {
+              "type": "URL",
+              "text": "Click",
+              "url": "https://www.website.com/{{1}}",
+              "example": ["dynamic-url-example"]
+            },
+            {
+              "type": "PHONE_NUMBER",
+              "text": "call",
+              "phone_number": "+917755991051"
+            }
+          ]
+        }
+      ],
+      "language": "en_US",
+      "status": "APPROVED",
+      "category": "MARKETING",
+      "id": "268188973054423"
+    }
+  ]
+}
+```
+
+</CodeGroup>

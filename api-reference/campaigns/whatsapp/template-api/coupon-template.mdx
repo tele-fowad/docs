@@ -1,0 +1,68 @@
+---
+title: "Coupon Template"
+sidebarTitle: "Coupon Template"
+description: "This API is used for coupon code templates."
+api: "POST /v3/{wabaid}/message_templates"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="wabaid" type="string" required>
+  Specifies the wabaid of the business account.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "name": "copycode_temp_img_1a1",
+  "category": "MARKETING",
+  "components": [
+    {
+      "type": "body",
+      "text": "Hey User,hi Telepie!"
+    },
+    {
+      "type": "HEADER",
+      "format": "image",
+      "example": {
+        "header_handle": [
+          "4::aW1hZ2UvanBlZw==:ARaKNYAKteyoccHERwld0CGRr9lVfd1pQQA6uTMmz4EYDD8Nws1i2_ZSTlhso7vgYn6MPpGe9TUnY3TVIQ9CadEIlMPM8puJ8Uyz5XRUt631Cw:e:1711982059:1849455295211775:100061459561823:ARYJYd3EpvPr55CqmCo"
+        ]
+      }
+    },
+    {
+      "type": "BUTTONS",
+      "buttons": [
+        {
+          "type": "COPY_CODE",
+          "example": "CARIBE25"
+        },
+        {
+          "type": "URL",
+          "text": "Click",
+          "url": "https://www.website.com/{{1}}",
+          "example": ["dynamic-url-example"]
+        },
+        {
+          "type": "PHONE_NUMBER",
+          "text": "call",
+          "phone_number": "+917755991051"
+        }
+      ]
+    }
+  ],
+  "language": "en_US"
+}
+```
+
+```json SampleResponse.json
+{
+  "id": "123412341234123",
+  "status": "APPROVED",
+  "category": "MARKETING"
+}
+```
+
+</CodeGroup>

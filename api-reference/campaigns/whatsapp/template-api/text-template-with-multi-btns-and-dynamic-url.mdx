@@ -1,0 +1,94 @@
+---
+title: "Text Template with Multiple Buttons & Dynamic URL Placeholder"
+sidebarTitle: "Text with Multi Buttons & URL Placeholder"
+description: "This API is used for creating text templates with multiple buttons and a
+dynamic url placeholder."
+api: "POST /v3/{wabaid}/message_templates"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="wabaid" type="string" required>
+  Specifies the wabaid of the business account.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "name": "sample_partners_api_img1a1",
+  "category": "MARKETING",
+  "components": [
+    {
+      "type": "header",
+      "format": "TEXT",
+      "text": "welcome to Telepie"
+    },
+    {
+      "type": "BODY",
+      "text": "hi user,\r\n\r\nthis is textlate\r\nregards,\r\nTelepie"
+    },
+    {
+      "type": "BUTTONS",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "Button1"
+        },
+        {
+          "type": "QUICK_REPLY",
+          "text": "Button2"
+        },
+        {
+          "type": "QUICK_REPLY",
+          "text": "Button3"
+        },
+        {
+          "type": "QUICK_REPLY",
+          "text": "Button4"
+        },
+        {
+          "type": "QUICK_REPLY",
+          "text": "Button5"
+        },
+        {
+          "type": "QUICK_REPLY",
+          "text": "Button6"
+        },
+        {
+          "type": "QUICK_REPLY",
+          "text": "Button7"
+        },
+        {
+          "type": "URL",
+          "text": "click",
+          "url": "https://farm4.staticflickr.com/3075/3168662394_7d7103de7d_z_d.jpg"
+        },
+        {
+          "type": "URL",
+          "text": "visit",
+          "url": "https://developers.facebook.com/"
+        },
+        {
+          "type": "PHONE_NUMBER",
+          "text": "Call",
+          "phone_number": "+919921447944"
+        }
+      ]
+    }
+  ],
+  "language": "en_US",
+  "allow_category_change": true
+}
+```
+
+```json SampleResponse.json
+{
+  "id": "123412341234123",
+  "status": "APPROVED",
+  "category": "MARKETING"
+}
+```
+
+</CodeGroup>

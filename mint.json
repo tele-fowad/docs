@@ -115,7 +115,24 @@
             "api-reference/campaigns/whatsapp/template-api/video-with-body-header-footer",
             "api-reference/campaigns/whatsapp/template-api/vidoe-with-body-head-foot-website-call",
             "api-reference/campaigns/whatsapp/template-api/video-with-body-head-foot-reply",
-            "api-reference/campaigns/whatsapp/template-api/image-temp-with-multiple-buttons"
+            "api-reference/campaigns/whatsapp/template-api/image-temp-with-multiple-buttons",
+            "api-reference/campaigns/whatsapp/template-api/image-template-with-multi-btn-and-dynamic-url",
+            "api-reference/campaigns/whatsapp/template-api/video-template-with-multiple-buttons",
+            "api-reference/campaigns/whatsapp/template-api/video-with-multi-btns-and-dynamic-url",
+            "api-reference/campaigns/whatsapp/template-api/doc-template-with-multi-buttons",
+            "api-reference/campaigns/whatsapp/template-api/doc-template-with-multi-btns-and-dynamic-url",
+            "api-reference/campaigns/whatsapp/template-api/location-template-with-multi-buttons",
+            "api-reference/campaigns/whatsapp/template-api/location-template-with-multi-btns-and-url",
+            "api-reference/campaigns/whatsapp/template-api/text-template-with-multi-buttons",
+            "api-reference/campaigns/whatsapp/template-api/text-template-with-multi-btns-and-dynamic-url",
+            "api-reference/campaigns/whatsapp/template-api/coupon-template",
+            "api-reference/campaigns/whatsapp/template-api/mpm-template",
+            "api-reference/campaigns/whatsapp/template-api/image-carousel-without-body-placeholder",
+            "api-reference/campaigns/whatsapp/template-api/image-carousel-with-body-placeholder",
+            "api-reference/campaigns/whatsapp/template-api/video-carousel-without-body-placeholder",
+            "api-reference/campaigns/whatsapp/template-api/video-carousel-with-body-placeholder",
+            "api-reference/campaigns/whatsapp/template-api/get-template-with-pagination",
+            "api-reference/campaigns/whatsapp/template-api/get-all-templates"
           ]
         }
       ]

@@ -1,0 +1,53 @@
+---
+title: "Multi Product Message (MPM) Template"
+sidebarTitle: "MPM Template"
+description: "This API is used for creating multi product message(MPM) templates"
+api: "POST /v3/{wabaid}/message_templates"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="wabaid" type="string" required>
+  Specifies the wabaid of the business account.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "name": "mpm_temp__1a1",
+  "category": "MARKETING",
+  "components": [
+    {
+      "type": "body",
+      "text": "Hey User, rgthyju caribeen ackages!"
+    },
+    {
+      "type": "HEADER",
+      "format": "text",
+      "text": "prasadhajare"
+    },
+    {
+      "type": "BUTTONS",
+      "buttons": [
+        {
+          "type": "MPM",
+          "text": "View items"
+        }
+      ]
+    }
+  ],
+  "language": "en_US"
+}
+```
+
+```json SampleResponse.json
+{
+  "id": "123412341234123",
+  "status": "APPROVED",
+  "category": "MARKETING"
+}
+```
+
+</CodeGroup>

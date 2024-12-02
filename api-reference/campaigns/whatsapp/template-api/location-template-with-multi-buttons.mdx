@@ -1,0 +1,92 @@
+---
+title: "Location Template with Multiple Buttons"
+sidebarTitle: "Location with Multiple Buttons"
+description: "This API is used for creating location templates with multiple buttons."
+api: "POST /v3/{wabaid}/message_templates"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="wabaid" type="string" required>
+  Specifies the wabaid of the business account.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "name": "sample_partners_api_location_1a1",
+  "category": "MARKETING",
+  "components": [
+    {
+      "type": "HEADER",
+      "format": "LOCATION"
+    },
+    {
+      "type": "BODY",
+      "text": "dear User,\r\n\r\nThis is location template use for the multate\r\n\r\nregards,\r\nTelepie"
+    },
+    {
+      "type": "BUTTONS",
+      "buttons": [
+        {
+          "type": "QUICK_REPLY",
+          "text": "Button1"
+        },
+        {
+          "type": "QUICK_REPLY",
+          "text": "Button2"
+        },
+        {
+          "type": "QUICK_REPLY",
+          "text": "Button3"
+        },
+        {
+          "type": "QUICK_REPLY",
+          "text": "Button4"
+        },
+        {
+          "type": "QUICK_REPLY",
+          "text": "Button5"
+        },
+        {
+          "type": "QUICK_REPLY",
+          "text": "Button6"
+        },
+        {
+          "type": "QUICK_REPLY",
+          "text": "Button7"
+        },
+        {
+          "type": "URL",
+          "text": "click",
+          "url": "https://farm4.staticflickr.com/3075/3168662394_7d7103de7d_z_d.jpg"
+        },
+        {
+          "type": "URL",
+          "text": "visit",
+          "url": "https://developers.facebook.com/get-started"
+        },
+        {
+          "type": "PHONE_NUMBER",
+          "text": "Call",
+          "phone_number": "+919921447944"
+        }
+      ]
+    }
+  ],
+  "language": "en_US",
+  "allow_category_change": true
+}
+```
+
+```json SampleResponse.json
+{
+  "id": "123412341234123",
+  "status": "APPROVED",
+  "category": "MARKETING"
+}
+```
+
+</CodeGroup>
