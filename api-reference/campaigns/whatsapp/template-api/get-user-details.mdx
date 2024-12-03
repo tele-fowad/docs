@@ -1,0 +1,36 @@
+---
+title: "Get User Details"
+sidebarTitle: "Get User Details"
+description: "This API is used to fetch user details."
+api: "GET /v3/{wabaid}/getuserdetails"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="wabaid" type="string" required>
+  Specifies the wabaid of the business account.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleResponse.json
+{
+  "code": 200,
+  "status": "SUCCESS",
+  "data": [
+    {
+      "whatsapp_business_account_id": "100249586351323",
+      "wanumber": "+919921447944",
+      "phone_number_id": "111266881902966"
+    },
+    {
+      "whatsapp_business_account_id": "100249586351323",
+      "wanumber": "+919921449959",
+      "phone_number_id": "112672835072002"
+    }
+  ]
+}
+```
+
+</CodeGroup>

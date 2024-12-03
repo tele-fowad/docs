@@ -1,0 +1,54 @@
+---
+title: "Create Authentication Copy Code Template"
+sidebarTitle: "Create Auth Copy Code Template"
+description: "This API is used to create a copy code authentication template."
+api: "POST /v3/{wabaid}/message_templates"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="wabaid" type="string" required>
+  Specifies the whatsapp business account id.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "name": "copycode_noexp_2111",
+  "language": "en_US",
+  "category": "authentication",
+  "message_send_ttl_seconds": 60,
+  "components": [
+    {
+      "type": "body",
+      "add_security_recommendation": true
+    },
+    {
+      "type": "footer",
+      "code_expiration_minutes": 5
+    },
+    {
+      "type": "buttons",
+      "buttons": [
+        {
+          "type": "otp",
+          "otp_type": "copy_code",
+          "text": "Copy Code"
+        }
+      ]
+    }
+  ]
+}
+```
+
+```json SampleResponse.json
+{
+  "id": "123412341234123",
+  "status": "APPROVED",
+  "category": "AUTHENTICATION"
+}
+```
+
+</CodeGroup>

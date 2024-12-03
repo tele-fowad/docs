@@ -1,0 +1,42 @@
+---
+title: "Get Payment Status"
+sidebarTitle: "Get Payment Status"
+description: "This API is used to get the payment status for the given order id using
+phone number id."
+api: "GET /v3/{phone_number_id}/payments/{payment_configuration}/{order_id}"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the phone number id.
+</ParamField>
+
+<ParamField path="payment_configuration" type="string" required>
+  Specifies the payment configuration.
+</ParamField>
+
+<ParamField path="order_id" type="string" required>
+  Specifies the order id.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleResponse.json
+{
+  "payments": [
+    {
+      "reference_id": "order-id",
+      "status": "PENDING",
+      "amount": {
+        "offset": 100,
+        "value": 100
+      },
+      "currency": "INR"
+    }
+  ]
+}
+```
+
+</CodeGroup>

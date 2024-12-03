@@ -1,0 +1,39 @@
+---
+title: "Get Whatsapp business encryption key"
+sidebarTitle: "Get WA Business Encryption Key"
+description: "This API is used to get the whatsapp business encryption key using phone
+number id."
+api: "GET /v3/flows/{phone_number_id}/get_private_key"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the phone number id.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleResponse.json
+{
+"result": "-----BEGIN RSA PRIVATE
+KEY-----\nMIIEpAIBAAKCAQEA4I6QAFQ7T8/bwuIDcAvjt5RFG+mHiZJUzNl4IPn5RE2F
+3eHR\nclv+oXzly2FgqxzZxuAvccCRzIWojipadZ/mVA+b/3elmUQD0zY8XFd8iOZYwwVr\
+nwLSKPNmF47Jfev+ePb2g4pnVk5i1f4qC7G1mmybvVTSyCyFmsGwri+uCU4D43OfR\
+nkS+xjNK20ZAFsMQqhfxzOm348Ll+VcDCkLeTOWUyfJIuU+JOZm32ocAaLVPPiv92\n
+cUS5yWI1gAZPBVD4rBtOvU45ROVeBIhvu8gTyZ/QmGoasb1OPb3Ao6EYNHFFiCcT\n
+CbBtUVEwhD58jexY4qE6R0o3w7GXTmOZwfoLgwIDAQABAoIBAAGCBrDdlQJIQWW
+9\nZApAJnsuJLIsTLXb5X1FvLjDFuowcUY1wdTr0pEXjnu5IeJnARvoqkoQ+tF3Mvy+\nk
++TOxrH4X6TinGtx7DKnJif1H6iVfQ9R57fz6VZdY+q3Qb0/eUdMySmt8a1MFyMK\nyZ6M
+mXibIFasMsf4hhhJs8/XOOKJ8fX2zjDHHIACJYzIwO51xCYO0Jv5jSJd4+ks\ngDSgKIjyI
+e8UlbKGoHO8nfsFK2zv7Q7mC1lUgx2zK/g9sE+xKl11KYbLV5FR0Z5O\nNGbF473xxee
+raSEhC1+oFXw+wpEBjw4QMmhs9nJXxLdvvcu4b602PYRG+E6sV1Y/\nX+iMLYkCgYE
+A/zeCVgEfsif+ZOELERr/aHoWLdhOmHlYC/nl38FjlX19KFIwv518\n/Tpg5oUPEhvcZeFT
+/kYWWrhvVu/rNaDt5EEDwhQ/EHVrkVWCfKrtnBIO8NZpTUg3\nVx7lSdsRJ19ESBXX4t
+LdYekfgQLdbAuAmAFamvZSPvqmj8abWYM+b9kCgYEA4T73\nwzaLo9OELlqU/0H8wi
+YY8gCmd7fmdARYeD3f4DvD==\n-----END RSA PRIVATE KEY-----"
+}
+```
+
+</CodeGroup>

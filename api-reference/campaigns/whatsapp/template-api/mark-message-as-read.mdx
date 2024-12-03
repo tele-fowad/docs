@@ -1,0 +1,31 @@
+---
+title: "Mark Message as Read"
+sidebarTitle: "Get User Details"
+description: "This API is used to set the status of the message id as read"
+api: "POST /v3/{phone_number_id}/messages"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the phone number id.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "messaging_product": "whatsapp",
+  "status": "read",
+  "message_id": "wamid.HBgMOTE5OTc4NTcyMTIwFQIAEhggQkNGQjk3OTg3NDI1MEVBNDQyRDExNzc1N0Q2ODc3MEMA"
+}
+```
+
+```json SampleResponse.json
+{
+  "success": true
+}
+```
+
+</CodeGroup>

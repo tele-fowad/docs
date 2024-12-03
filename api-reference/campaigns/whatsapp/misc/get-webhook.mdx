@@ -1,0 +1,27 @@
+---
+title: "Get Webhook"
+sidebarTitle: "Get Webhook"
+description: "This API is used to fetch the waba details."
+api: "GET /v3/{phone_number_id}/getwebhook"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the phone number id.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleResponse.json
+{
+  "webhook_url": "https://webhookurl.domain",
+  "headers": {
+    "header1": "header1_value",
+    "header2": "header2_value"
+  }
+}
+```
+
+</CodeGroup>

@@ -1,0 +1,27 @@
+---
+title: "Fetch Waba Info"
+sidebarTitle: "Fetch Waba Info"
+description: "This API is used to fetch the waba details."
+api: "GET /v3/{wabaid}"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="wabaid" type="string" required>
+  Specifies the wabaid of the business account.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleResponse.json
+{
+  "id": "100249586351323",
+  "name": "Developer Telepie WABA",
+  "currency": "INR",
+  "timezone_id": "71",
+  "message_template_namespace": "13f5d10e_e4ed_4de3_8538_cd0b2a7918d4"
+}
+```
+
+</CodeGroup>

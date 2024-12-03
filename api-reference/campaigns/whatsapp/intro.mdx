@@ -33,6 +33,23 @@ icon: "whatsapp"
 - 404 Not Found - resource was not found.
 - 405 Method Not Allowed - requested method is not supported for resources.
 
+## Error Codes & Descriptions
+
+| API Type       | Error Code | Error Description                                                                                                                        |
+| -------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Send Media API | 200        | SUCCESS                                                                                                                                  |
+| Send Media API | 131009     | Parameter value is invalid                                                                                                               |
+| Send Media API | 100        | Invalid Parameter                                                                                                                        |
+| Send Media API | 133010     | Phone number is not registered with WhatsApp business platform.                                                                          |
+| Send Media API | 133004     | Server is temporarily unavailable.                                                                                                       |
+| Send Media API | 132015     | Template parameters invalid or missing.                                                                                                  |
+| Send Media API | 132001     | The template does not exist in the specified language or the template has not been approved.                                             |
+| Send Media API | 132000     | The number of variable parameter values included in the request did not match the number of variable parameters defined in the template. |
+| Send Media API | 131051     | Unsupported message type.                                                                                                                |
+| Send Media API | 131000     | Message failed to send due to an unknown error.                                                                                          |
+| Send Media API | 131021     | Sender and recipient phone number is the same.                                                                                           |
+| Send Media API | 131016     | A service is temporarily unavailable.                                                                                                    |
+
 ## Supported Countries
 
 Currently [address messages](/api-reference/campaigns/whatsapp/message-api/send-address-message)
@@ -53,3 +70,21 @@ are supported in **India & Singapore** . Below table outlines which fields are s
 | unit_number   | Unit Number             | text       | India               | None                     |
 | city          | City                    | text       | India               | None                     |
 | state         | State                   | text       | India               | None                     |
+
+## The interactive object of type list
+
+The Interactive object generally contains 4 main components: header, body,
+footer, and action.
+
+<Note>
+  The interactive object of type list must have minimum 1 and maximum 10 section
+  objects should be nested with the unique ids.
+</Note>
+
+| Name   | Description                                                                                                  |
+| ------ | ------------------------------------------------------------------------------------------------------------ |
+| list   | `Required` Use it for List Messages.                                                                         |
+| header | `Optional` Header content displayed on top of a message.                                                     |
+| body   | `Required` The body of the message. There’s a maximum of 1024 characters. Emojis and markdown are supported. |
+| footer | `Optional` The footer of the message. There’s a maximum of 60 characters. Emojis and markdown are supported. |
+| action | `Required` Action you want the user to perform after reading the message.                                    |

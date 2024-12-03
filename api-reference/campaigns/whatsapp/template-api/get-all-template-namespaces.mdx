@@ -1,0 +1,24 @@
+---
+title: "Get All Template Namespaces"
+sidebarTitle: "Get All Template Namespaces"
+description: "This API is used to check all template namespaces for a particular user"
+api: "GET /v3/{wabaid}?fields=message_template_namespace"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="wabaid" type="string" required>
+  Specifies the wabaid of the business account.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleResponse.json
+{
+  "message_template_namespace": "13f5d10e_e4ed_4de3_8538_cd0b2a7918d4",
+  "id": "100249586351323"
+}
+```
+
+</CodeGroup>

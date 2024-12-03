@@ -1,0 +1,78 @@
+---
+title: "Update Catalog Product"
+sidebarTitle: "Update Catalog Product"
+description: "This API is used to delete a product in the given catalog id."
+api: "POST /v3/{catalog_id}/batch"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="wabaid" type="string" required>
+  Specifies the wabaid of the business account.
+</ParamField>
+
+<ParamField path="catalog_id" type="string" required>
+  Specifies the catalog id.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "requests": [
+    {
+      "method": "DELETE",
+      "retailer_id": "product-06600",
+      "data": {
+        "availability": "in stock",
+        "brand": "Reebok11",
+        "category": "t-shirts",
+        "description": "product yttfytdcgfc description",
+        "image_url": "https://whatsappdata.s3.ap-south-1.amazonaws.com/userMedia/7fb8ceb3bd59c7956b1df66729296a4c/teshirt_resize.jpeg",
+        "name": "product changed name",
+        "price": 19999000,
+        "currency": "USD",
+        "shipping": [
+          {
+            "country": "IND",
+            "region": "DELHI",
+            "service": "service",
+            "price_value": "10000",
+            "price_currency": "INR"
+          }
+        ],
+        "condition": "new",
+        "url": "https://whatsappdata.s3.ap-south-1.amazonaws.com/userMedia/7fb8ceb3bd59c7956b1df66729296a4c/image_nataraj.jpeg",
+        "retailer_product_group_id": "product_default_group7248848229855971"
+      },
+      "applinks": {
+        "android": [
+          {
+            "app_name": "Electronic Example Android",
+            "package": "com.electronic",
+            "url": "example-android://electronic"
+          }
+        ],
+        "ios": [
+          {
+            "app_name": "Electronic Example iOS",
+            "app_store_id": 2222,
+            "url": "example-ios://electronic"
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+```json SampleResponse.json
+{
+  "handles": [
+    "AcxGYXTyLwrjPeESbZUYq8e6CxCc9lHu-hlgIycIKF7cVmXtbLWe4EsNkbNFoXMF2-9TELooo9Xuw_4oyRxMXqbz"
+  ]
+}
+```
+
+</CodeGroup>

@@ -1,0 +1,38 @@
+---
+title: "Payment Refund"
+sidebarTitle: "Payment Refund"
+description: "This API is used by the business to initiate a refund for an order"
+api: "POST /v3/{phone_number_id}/messages"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the phone number id.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "reference_id": "{{reference_id}}",
+  "speed": "normal",
+  "payment_config_id": "{{payment_config_id}}",
+  "amount": {
+    "currency": "INR",
+    "value": "100",
+    "offset": "100"
+  }
+}
+```
+
+```json SampleResponse.json
+{
+  "id": "refund-id",
+  "status": "pending",
+  "speed_processed": "normal"
+}
+```
+
+</CodeGroup>

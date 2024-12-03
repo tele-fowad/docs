@@ -1,0 +1,39 @@
+---
+title: "Get Client WhatsApp Business Accounts"
+sidebarTitle: "Get Client WhatsApp Business Accounts"
+description: "This API is used to fetch the client whatsapp business accounts details for
+the given business id."
+api: "GET /v3/{business_id}/client_whatsapp_business_accounts"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="access_token" type="string" required>
+  Specifies admin system user access token. TOKEN
+</ParamField>
+
+<CodeGroup>
+
+```json SampleResponse.json
+{
+  "data": [
+    {
+      "id": "waba-id-1",
+      "name": "ABC",
+      "currency": "INR",
+      "timezone_id": "71",
+      "message_template_namespace": "message_template_namespace-1"
+    },
+    {
+      "id": "waba-id-2",
+      "name": "DEF",
+      "currency": "INR",
+      "timezone_id": "71",
+      "message_template_namespace": "message_template_namespace-2"
+    }
+  ]
+}
+```
+
+</CodeGroup>

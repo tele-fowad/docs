@@ -81,7 +81,11 @@
           "group": "Catalogue API",
           "pages": [
             "api-reference/campaigns/whatsapp/catalogue-api/single-product-catalogue",
-            "api-reference/campaigns/whatsapp/catalogue-api/multiproduct-catalogue"
+            "api-reference/campaigns/whatsapp/catalogue-api/multiproduct-catalogue",
+            "api-reference/campaigns/whatsapp/catalogue-api/create-catalog-product",
+            "api-reference/campaigns/whatsapp/catalogue-api/update-catalog-product",
+            "api-reference/campaigns/whatsapp/catalogue-api/delete-catalog-product",
+            "api-reference/campaigns/whatsapp/catalogue-api/get-catalog-id-using-wabaid"
           ]
         },
         {
@@ -97,7 +101,11 @@
             "api-reference/campaigns/whatsapp/send-templates/mpm-template.message",
             "api-reference/campaigns/whatsapp/send-templates/limited-time-offer-template",
             "api-reference/campaigns/whatsapp/send-templates/carousel-without-body-placeholder",
-            "api-reference/campaigns/whatsapp/send-templates/carousel-with-body-placeholder"
+            "api-reference/campaigns/whatsapp/send-templates/carousel-with-body-placeholder",
+            "api-reference/campaigns/whatsapp/send-templates/create-auth-one-tap-template",
+            "api-reference/campaigns/whatsapp/send-templates/create-auth-zero-tap-template",
+            "api-reference/campaigns/whatsapp/send-templates/create-auth-copy-code-template",
+            "api-reference/campaigns/whatsapp/send-templates/send-auth-template-message"
           ]
         },
         {
@@ -132,7 +140,28 @@
             "api-reference/campaigns/whatsapp/template-api/video-carousel-without-body-placeholder",
             "api-reference/campaigns/whatsapp/template-api/video-carousel-with-body-placeholder",
             "api-reference/campaigns/whatsapp/template-api/get-template-with-pagination",
-            "api-reference/campaigns/whatsapp/template-api/get-all-templates"
+            "api-reference/campaigns/whatsapp/template-api/get-all-templates",
+            "api-reference/campaigns/whatsapp/template-api/get-all-template-namespaces",
+            "api-reference/campaigns/whatsapp/template-api/get-template-with-id",
+            "api-reference/campaigns/whatsapp/template-api/edit-template",
+            "api-reference/campaigns/whatsapp/template-api/delete-template-by-name",
+            "api-reference/campaigns/whatsapp/template-api/delete-template-by-name-and-id",
+            "api-reference/campaigns/whatsapp/template-api/get-user-details",
+            "api-reference/campaigns/whatsapp/template-api/mark-message-as-read",
+            "api-reference/campaigns/whatsapp/template-api/payment-refund"
+          ]
+        },
+        {
+          "group": "Misc",
+          "pages": [
+            "api-reference/campaigns/whatsapp/misc/fetch-waba-info",
+            "api-reference/campaigns/whatsapp/misc/set-webhook",
+            "api-reference/campaigns/whatsapp/misc/get-webhook",
+            "api-reference/campaigns/whatsapp/misc/set-wa-business-encryption-key",
+            "api-reference/campaigns/whatsapp/misc/get-wa-business-encryption-key",
+            "api-reference/campaigns/whatsapp/misc/get-payment-status",
+            "api-reference/campaigns/whatsapp/misc/get-client-wa-business-accounts",
+            "api-reference/campaigns/whatsapp/misc/get-wa-business-profile"
           ]
         }
       ]

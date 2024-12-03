@@ -1,0 +1,30 @@
+---
+title: "Get WhatsApp Business Profile"
+sidebarTitle: "Get WhatsApp Business Profile"
+description: "This API is used to fetch the client whatsapp business accounts details for
+the given business id."
+api: "GET /v3/{phone_number}/whatsapp_business_profile"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="access_token" type="string" required>
+  Specifies admin system user access token.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleResponse.json
+{
+  "data": [
+    {
+      "messaging_product": "whatsapp"
+    }
+  ]
+}
+```
+
+</CodeGroup>
+
+<Note>Sample Response(* may vary based on the information available)</Note>

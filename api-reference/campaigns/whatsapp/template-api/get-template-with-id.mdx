@@ -1,0 +1,61 @@
+---
+title: "Get Template with ID"
+sidebarTitle: "Get Template with ID"
+description: "This API is used to check the template using template id."
+api: "GET /v3/{message_template_id}"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="message_template_id" type="string" required>
+  Specifies the message template id.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleResponse.json
+{
+  "name": "ltotemp36013m103",
+  "components": [
+    {
+      "type": "BODY",
+      "text": "Hey User, caribeen ackages!"
+    },
+    {
+      "type": "LIMITED_TIME_OFFER",
+      "limited_time_offer": {
+        "text": "Expiring offer!",
+        "has_expiration": true
+      }
+    },
+    {
+      "type": "BUTTONS",
+      "buttons": [
+        {
+          "type": "COPY_CODE",
+          "text": "Copy offer code",
+          "example": ["CARIBE25"]
+        },
+        {
+          "type": "URL",
+          "text": "Click",
+          "url": "https://www.website.com/{{1}}",
+          "example": ["dynamic-url-example"]
+        },
+        {
+          "type": "PHONE_NUMBER",
+          "text": "call",
+          "phone_number": "+917755991051"
+        }
+      ]
+    }
+  ],
+  "language": "en_US",
+  "status": "APPROVED",
+  "category": "MARKETING",
+  "id": "2883983598406625"
+}
+```
+
+</CodeGroup>

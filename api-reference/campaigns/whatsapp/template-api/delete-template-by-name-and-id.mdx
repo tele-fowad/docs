@@ -1,0 +1,31 @@
+---
+title: "Delete Template by Name & ID"
+sidebarTitle: "Delete Template by Name & ID"
+description: "This API is used to delete the template by its name and Id"
+api: "DELETE /v3/{wabaid}/message_templates?hsm_id={message_template_id}&name={template_name}"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="wabaid" type="string" required>
+  Specifies the wabaid of the business account.
+</ParamField>
+
+<ParamField path="message_template_id" type="string" required>
+  Specifies the message template id.
+</ParamField>
+
+<ParamField path="template_name" type="string" required>
+  Specifies the template name
+</ParamField>
+
+<CodeGroup>
+
+```json SampleResponse.json
+{
+  "success": true
+}
+```
+
+</CodeGroup>

@@ -1,0 +1,37 @@
+---
+title: "Set Webhook"
+sidebarTitle: "Set Webhook"
+description: "This API is used to set a webhook url against the waba using phone
+number id. The callback payload received from Meta will be relayed to this webhook url
+along with the custom values as specified in the headers parameter of the request body."
+api: "POST /v3/{phone_number_id}/setwebhook"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="phone_number_id" type="string" required>
+  Specifies the phone number id.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "webhook_url": "https://webhookurl.domain",
+  "headers": {
+    "header1": "header1_value",
+    "header2": "header2_value"
+  }
+}
+```
+
+```json SampleResponse.json
+{
+  "code": "200",
+  "status": "Success",
+  "message": "Your webhook has been configured successfully"
+}
+```
+
+</CodeGroup>

@@ -1,0 +1,31 @@
+---
+title: "Get Catalog ID using WABA Id"
+description: "This API is used to fetch the catalog id for the given waba number"
+api: "GET /v3/fetchcatalogid"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="apikey" type="string" required>
+  Specifies the waba API key
+</ParamField>
+
+<ParamField path="wanumber" type="string" required>
+  Specifies the WABA number
+</ParamField>
+
+<CodeGroup>
+
+```json SampleResponse.json
+{
+  "code": 200,
+  "status": "SUCCESS",
+  "message": "Catalog data fetch successfully",
+  "data": {
+    "catlogid": "catalog-id"
+  }
+}
+```
+
+</CodeGroup>
