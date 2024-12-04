@@ -71,7 +71,7 @@ are supported in **India & Singapore** . Below table outlines which fields are s
 | city          | City                    | text       | India               | None                     |
 | state         | State                   | text       | India               | None                     |
 
-## The interactive object of type list
+## The Interactive Object of Type List
 
 The Interactive object generally contains 4 main components: header, body,
 footer, and action.
@@ -88,3 +88,155 @@ footer, and action.
 | body   | `Required` The body of the message. There’s a maximum of 1024 characters. Emojis and markdown are supported. |
 | footer | `Optional` The footer of the message. There’s a maximum of 60 characters. Emojis and markdown are supported. |
 | action | `Required` Action you want the user to perform after reading the message.                                    |
+
+## The Interactive Object of Type Button
+
+The interactive object generally contains 4 main components: header, body,
+footer, and action.
+
+<Note>
+  The interactive object of type button must have minimum 1 and maximum 3
+  buttons should be nested with the unique ids.
+</Note>
+
+| **Name**   | **Description**                                                                                                                                                                                         |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **type**   | `Required` Supported values: button (Use it for Reply Buttons).                                                                                                                                         |
+| **header** | `Optional` Header content displayed on top of a message.                                                                                                                                                |
+| **body**   | `Required` The body of the message. There’s a maximum of 1024 characters. Emojis and markdown are supported.                                                                                            |
+| **footer** | `Optional` The footer of the message. There’s a maximum of 60 characters. Emojis and markdown are supported.                                                                                            |
+| **action** | `Required` Action you want the user to perform after reading the message. You must add at least one button, and include `type`, `title`, and `id` for your buttons. You cannot add more than 3 buttons. |
+
+#### Example action object
+
+```json
+{
+  "action": {
+    "buttons": [
+      {
+        "type": "reply",
+        "reply": {
+          "id": "unique-postback-id-1",
+          "title": "First Button’s Title"
+        }
+      },
+      {
+        "type": "reply",
+        "reply": {
+          "id": "unique-postback-id-2",
+          "title": "Second Button’s Title"
+        }
+      }
+    ]
+  }
+}
+```
+
+## The Header Object
+
+| Name         | Description                                                                                                                     |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| **type**     | `Required` The header type you would like to use.                                                                               |
+| **text**     | Required if `type` is set to `text`. Text for the header. Maximum of 60 characters. Formatting allows emojis, but not markdown. |
+| **video**    | Required if `type` is set to `video`. Contains the media object for this video.                                                 |
+| **image**    | Required if `type` is set to `image`. Contains the media object for this image.                                                 |
+| **document** | Required if `type` is set to `document`. Contains the media object for this document.                                           |
+
+Supported Values are :
+
+1. `text` : Used for Reply Buttons.
+2. `video` : Used for Reply Buttons.
+3. `image` : Used for Reply Buttons.
+4. `document` : Used for Reply Buttons.
+
+#### Example header object
+
+```json
+{
+  "header": {
+    "type": "text",
+    "text": "your text"
+  }
+  // OR
+  ,
+  {
+    "document": {
+      "id": "your-media-id",
+      "filename": "some-file-name"
+    }
+  }
+  // OR
+  ,
+  {
+    "document": {
+      "link": "the-provider-name/protocol://the-url",
+      "provider": {
+        "name": "provider-name"
+      },
+      "filename": "some-file-name"
+    }
+  }
+  // OR
+  ,
+  {
+    "video": {
+      "id": "your-media-id"
+    }
+  }
+  // OR
+  ,
+  {
+    "video": {
+      "link": "the-provider-name/protocol://the-url",
+      "provider": {
+        "name": "provider-name"
+      }
+    }
+  }
+  // OR
+  ,
+  {
+    "image": {
+      "id": "your-media-id"
+    }
+  }
+  // OR
+  ,
+  {
+    "image": {
+      "link": "http(s)://the-url",
+      "provider": {
+        "name": "provider-name"
+      }
+    }
+  }
+}
+
+```
+
+### The Body Object
+
+| Name     | Description                                                             |
+| -------- | ----------------------------------------------------------------------- |
+| **text** | `Required` The body content of the message. Maximum of 1024 characters. |
+
+### The Footer Object
+
+| Name     | Description                                                                                             |
+| -------- | ------------------------------------------------------------------------------------------------------- |
+| **text** | `Required if the footer Object is present` The footer content of the message. Maximum of 60 characters. |
+
+### The Action Object
+
+| Name       | Description                         |
+| ---------- | ----------------------------------- |
+| **button** | Required for Reply Button Messages. |
+
+A button can contain the following parameters:
+
+1. **type** : only supported type is reply (for Reply Button Messages)
+2. **title** : Button title. It cannot be an empty string and must be unique within
+3. **the message** : Maximum of 20 characters. Does not allow emojis or
+   markdown.
+4. **id** : Unique identifier for your button. Maximum of 256 characters. This ID is
+   returned in the webhook when the button is clicked by the user.
