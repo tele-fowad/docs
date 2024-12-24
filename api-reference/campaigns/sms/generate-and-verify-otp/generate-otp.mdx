@@ -1,0 +1,40 @@
+---
+title: Generate OTP
+description: "This endpoint facilitates the generation of a One-Time Password (OTP)."
+api: "POST /verify"
+playground: true
+---
+
+Upon successful invocation, a unique OTP is provided, enhancing the security of your system. By default, the OTP is designed for single-use and expires after a specified timeframe. Implementing this feature adds an additional layer of authentication to your application, bolstering overall security
+
+#### Request Body Parameters
+
+<ParamField path="config-id" type="string" required>
+  ID of the verification configuration based on which the OTP will be generated.
+</ParamField>
+
+<ParamField path="to" type="string" required>
+  Recipient’s MSISDN
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.txt
+ curl -G - /v1/verify \
+  -H 'apikey':'string'
+  -H "Content-Type: application/json" \
+  -d '{
+     "configId": " a73cd9xe-XXXX-XXXX-XXXX-7f731bcf4y64",
+     "to": "91XXXXXXXXXX " }'
+
+```
+
+```json SampleResponse.json
+{
+  "data": "33888968-XXXX-XXXX-XXXX-3010e0069668",
+  "error": null,
+  "message": "OTP Generated Successfully!"
+}
+```
+
+</CodeGroup>

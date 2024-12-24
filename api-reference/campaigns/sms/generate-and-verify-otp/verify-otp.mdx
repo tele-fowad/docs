@@ -1,0 +1,41 @@
+---
+title: Verify OTP
+description: "This endpoint verifies a user-submitted One-Time Password (OTP),"
+api: "POST /verify/validate"
+playground: true
+---
+
+Upon successful invocation, it confirms their identity for secure access. Successful validation grants authorized users access to the intended functionality, bolstering system security by ensuring only valid OTPs are accepted.
+
+#### Request Body Parameters
+
+<ParamField path="verifyId" type="string" required>
+  The Verify ID which was sent in the Generate OTP API response.
+</ParamField>
+
+<ParamField path="otp" type="string" required>
+  One Time Password which was sent to the users to validate them.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.txt
+ curl -G - /v1/verify/validate \
+  -H 'apikey':'string'
+  -H "Content-Type: application/json" \
+  -d '{
+     "verifyId": "33888968-XXXX-XXXX-XXXX-3010e0069668",
+     "otp": "XXXXXX" }'
+
+
+```
+
+```json SampleResponse.json
+{
+  "data": "33888968-XXXX-XXXX-XXXX-3010e0069668",
+  "error": null,
+  "message": "OTP Verified Successfully!"
+}
+```
+
+</CodeGroup>

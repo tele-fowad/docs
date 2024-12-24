@@ -1,0 +1,62 @@
+---
+title: Send Template SMS
+description: "Our web app portal includes a Template SMS feature designed to streamline and standardize your messaging processes. "
+api: "POST /sms"
+playground: true
+---
+
+This functionality allows you to create and use predefined message templates for various scenarios such as promotions, reminders, notifications, and more. With Template SMS, you can ensure consistent communication while saving time on message composition.
+
+#### Request Body Parameters
+
+<ParamField path="sender" type="string" required>
+  Originator/Alphanumeric ID
+</ParamField>
+
+<ParamField path="to" type="string" required>
+  Recipient's MSISDN
+</ParamField>
+
+<ParamField path="text" type="string" required>
+  The phone number for the contact.
+</ParamField>
+
+<ParamField path="type" type="string" required>
+  Route Type. Use **TRANS** for Transactional type. Use **PROMO** for
+  Promotional type. Use **OTP** for OTP type.
+</ParamField>
+
+<ParamField path="templateId" type="string">
+  Unique ID of the template
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "sender": "senderName"
+  "to": "91XXXXXXXXXX"
+  "text": "Hello World!"
+  "type": "TRANS"
+  "templateId" :"templateId"
+}
+
+
+```
+
+```json SampleResponse.json
+{
+  "id": "58d63c02-XXXX-XXXX-XXXX-XXXXbb39453",
+  "data": [
+    {
+      "recipient": "91XXXXXXXXXX",
+      "messageId": "58d63c02-XXXXX-XXXXX-XXXXX-XXXX9bb39453:1"
+    }
+  ],
+  "totalCount": 1,
+  "message": "Message Sent Successfully!",
+  "error": null
+}
+```
+
+</CodeGroup>

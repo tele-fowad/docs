@@ -1,0 +1,63 @@
+---
+title: Send Bulk SMS
+description: "Our web app portal is equipped with a powerful bulk SMS feature designed to facilitate large-scale communication with your audience."
+api: "POST /sms"
+playground: true
+---
+
+This functionality is ideal for marketing campaigns, event notifications, alerts, and any situation where you need to reach multiple recipients simultaneously. With our bulk SMS feature, you can ensure that your message is delivered quickly and efficiently to all intended recipients.
+
+#### Request Body Parameters
+
+<ParamField path="sender" type="string" required>
+  Originator/Alphanumeric ID
+</ParamField>
+
+<ParamField path="to" type="string" required>
+  Recipient's MSISDN
+</ParamField>
+
+<ParamField path="text" type="string" required>
+  The phone number for the contact.
+</ParamField>
+
+<ParamField path="type" type="string" required>
+  Route Type. Use **TRANS** for Transactional type. Use **PROMO** for
+  Promotional type. Use **OTP** for OTP type.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "sender": "senderName",
+  "to": "91XXXXXXXXXX",
+  "text": "Hello World!",
+  "type": "TRANS"
+}
+```
+
+```json SampleResponse.json
+{
+  "id": "58d63c02-XXXX-XXXX-XXXX-XXXXbb39453",
+  "data": [
+    {
+      "recipient": "91XXXXXXXXX1",
+      "messageId": "58d63c02-XXXXX-XXXXX-XXXXX-XXXX9bb39453:1"
+    },
+    {
+      "recipient": "91XXXXXXXXX2",
+      "messageId": "58d63c02-XXXXX-XXXXX-XXXXX-XXXX9bb39453:2"
+    },
+    {
+      "recipient": "91XXXXXXXXX3",
+      "messageId": "58d63c02-XXXXX-XXXXX-XXXXX-XXXX9bb39453:3"
+    }
+  ],
+  "totalCount": 3,
+  "message": "Message Sent Successfully!",
+  "error": null
+}
+```
+
+</CodeGroup>

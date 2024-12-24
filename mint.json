@@ -169,9 +169,23 @@
     {
       "group": "SMS Campaign",
       "pages": [
-        "api-reference/campaigns/sms/OTP",
-        "api-reference//campaigns/sms/sms-logs",
-        "api-reference/campaigns/sms/send-sms-get"
+        "api-reference/campaigns/sms/intro",
+        "api-reference/campaigns/sms/send-single-message",
+        "api-reference//campaigns/sms/send-otp-sms",
+        "api-reference/campaigns/sms/send-bulk-sms",
+        "api-reference/campaigns/sms/send-sms-with-unicode",
+        "api-reference/campaigns/sms/send-flash-sms",
+        "api-reference/campaigns/sms/send-template-sms",
+        "api-reference/campaigns/sms/send-sms-with-template-id",
+
+        {
+          "group": "Generate and Verify OTP",
+          "pages": [
+            "api-reference/campaigns/sms/generate-and-verify-otp/intro",
+            "api-reference/campaigns/sms/generate-and-verify-otp/generate-otp",
+            "api-reference/campaigns/sms/generate-and-verify-otp/verify-otp"
+          ]
+        }
       ]
     },
     {
@@ -196,7 +210,10 @@
   ],
 
   "api": {
-    "baseUrl": "https://partnersv1.pinbot.ai",
+    "baseUrl": [
+      "https://partnersv1.pinbot.ai",
+      "https://api.aoc-portal.com/v1/"
+    ],
     "playground": {
       "mode": "show"
     },

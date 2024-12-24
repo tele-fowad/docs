@@ -1,0 +1,63 @@
+---
+title: Send Flash SMS
+description: "Our web app portal offers a Flash SMS feature, allowing you to send urgent and high-priority messages that appear directly on the recipient's mobile screen."
+api: "POST /sms"
+playground: true
+---
+
+Unlike regular SMS messages, Flash SMS doesn't get stored in the recipient's inbox by default, making it ideal for time-sensitive alerts, critical notifications, and emergency communications.
+
+#### Request Body Parameters
+
+<ParamField path="sender" type="string" required>
+  Originator/Alphanumeric ID
+</ParamField>
+
+<ParamField path="to" type="string" required>
+  Recipient's MSISDN
+</ParamField>
+
+<ParamField path="text" type="string" required>
+  The phone number for the contact.
+</ParamField>
+
+<ParamField path="type" type="string" required>
+  Route Type. Use **TRANS** for Transactional type. Use **PROMO** for
+  Promotional type. Use **OTP** for OTP type.
+</ParamField>
+
+<ParamField path="unicode" type="integer">
+  Route Type. Use **TRANS** for Transactional type. Use **PROMO** for
+  Promotional type. Use **OTP** for OTP type.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "sender": "senderName",
+  "to": "91XXXXXXXXXX",
+  "text": "Hello World!",
+  "type": "TRANS",
+  "flash": 1
+}
+```
+
+```json SampleResponse.json
+{
+  "id": "58d63c02-XXXX-XXXX-XXXX-XXXXbb39453",
+  "data": [
+    {
+    "recipient": "91XXXXXXXXXX",
+    "messageId": "58d63c02-XXXXX-XXXXX-XXXXX-XXXX9bb39453:1"
+    }
+    "flash": 1
+],
+  "totalCount": 1,
+  "message": "Message Sent Successfully!",
+  "error": null
+}
+
+```
+
+</CodeGroup>

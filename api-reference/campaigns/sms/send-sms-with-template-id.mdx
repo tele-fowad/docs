@@ -1,0 +1,59 @@
+---
+title: Send SMS with Template ID
+description: "Our web portal features a send SMS option with a templateId, making your messaging processes more efficient and consistent."
+api: "POST /sms/template"
+playground: true
+---
+
+#### Request Body Parameters
+
+<ParamField path="sender" type="string" required>
+  Originator/Alphanumeric ID
+</ParamField>
+
+<ParamField path="to" type="string" required>
+  Recipient's MSISDN
+</ParamField>
+
+<ParamField path="templateId" type="string" required>
+  Unique ID of the template
+</ParamField>
+
+<ParamField path="type" type="string" required>
+  TRANS
+</ParamField>
+
+<ParamField path="custom" type="object" required>
+  If the template contains variables, pass a custom parameter value in the array
+  with the number of variables present in the template data. Otherwise, pass the
+  custom parameter with a blank array.
+</ParamField>
+
+<CodeGroup>
+
+```json SampleRequest.json
+{
+  "sender": "AOCAPI",
+  "to": "91XXXXXXXXXX",
+  "templateId": "150716565XXXXXXXXXX",
+  "custom": ["var1", "var2"],
+  "type": "TRANS"
+}
+```
+
+```json SampleResponse.json
+{
+  "id": "58d63c02-XXXX-XXXX-XXXX-XXXXbb39453",
+  "data": [
+    {
+      "recipient": "91XXXXXXXXXX",
+      "messageId": "58d63c02-XXXXX-XXXXX-XXXXX-XXXX9bb39453:1"
+    }
+  ],
+  "totalCount": 1,
+  "message": "Message Sent Successfully!",
+  "error": null
+}
+```
+
+</CodeGroup>
