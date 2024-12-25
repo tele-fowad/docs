@@ -1,0 +1,45 @@
+---
+title: "Clever Tap SMS"
+description: "Learn how to send Clever Tap SMS using the Telepie API."
+icon: "message"
+---
+
+AOC portal SMS API can be very easily integrated into CleverTap, by following a few simple steps.
+
+However, before you get started, you will need the following:
+
+- A AOC portal SMS account with credits in your account balance.
+- A fully functional CleverTap account with the relevant knowledge on how to enable engagement channels on the panel.
+
+## Step 1
+
+- In the CleverTap Dashboard, navigate to Settings and click on (SMS) Integrate your SMS.
+- Select Generic option from the drop down .
+
+![image](https://developers.aoc-portal.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstep1.f76a663c.jpg&w=3840&q=75)
+
+## Step 2
+
+- Select the POST protocol for AOC portal SMS integration.
+- Enter the HTTP API endpoint of AOC portal SMS in the input field.
+- Endpoint : https://api.aoc-portal.com/v1/sms
+- Enter key value pairs in header like,
+
+| Key            | Value              |
+| -------------- | ------------------ |
+| `apikey`       | 'string'           |
+| `content-Type` | 'application/json' |
+
+![image](https://developers.aoc-portal.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstep2.0a85841e.jpg&w=3840&q=75)
+
+## Step 3
+
+AOC portal SMS requires the following parameters:
+
+![image](https://developers.aoc-portal.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstep3.254d465e.jpg&w=3840&q=75)
+
+## Step 4
+
+Send a test SMS then save configuration , This should successfully configure the AOC portal SMS integration within CleverTap.
+
+![image](https://developers.aoc-portal.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstep4.9ee47e53.png&w=1920&q=75)

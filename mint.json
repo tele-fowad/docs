@@ -185,7 +185,9 @@
             "api-reference/campaigns/sms/generate-and-verify-otp/generate-otp",
             "api-reference/campaigns/sms/generate-and-verify-otp/verify-otp"
           ]
-        }
+        },
+
+        "api-reference/campaigns/sms/clever-tap-sms/index"
       ]
     },
     {
@@ -205,7 +207,11 @@
     },
     {
       "group": "Webhooks",
-      "pages": ["webhooks/index"]
+      "pages": [
+        "webhooks/index",
+        "webhooks/sms-webhook",
+        "webhooks/whatsapp-webhook"
+      ]
     }
   ],
 
