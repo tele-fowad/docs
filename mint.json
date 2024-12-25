@@ -31,7 +31,7 @@
 
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com",
+    "url": "https://dashboard.telepie.com",
     "style": "pill"
   },
 
@@ -228,15 +228,12 @@
   },
 
   "feedback": {
-    "thumbsRating": true,
-    "suggestEdit": true,
-    "raiseIssue": true
+    "thumbsRating": true
   },
 
   "footerSocials": {
     "x": "https://x.com/telepie",
     "facebook": "https://www.facebook.com/telepie",
-    "linkedin": "https://www.linkedin.com/company/telepietechnology/",
-    "github": "https://github.com/telepie/telepie-docs"
+    "linkedin": "https://www.linkedin.com/company/telepietechnology/"
   }
 }
