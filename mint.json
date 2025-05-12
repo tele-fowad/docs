@@ -1,241 +1,238 @@
 {
-    "$schema": "https://mintlify.com/schema.json",
-    "name": "Telepie Docs",
-    "logo": {
-        "dark": "/logo/dark.svg",
-        "light": "/logo/light-new.svg"
-    },
-    "favicon": "/favicon.svg",
-    "colors": {
-        "primary": "#0D9373",
-        "light": "#07C983",
-        "dark": "#0D9373",
-        "anchors": {
-            "from": "#0D9373",
-            "to": "#07C983"
-        }
-    },
-
-    "versions": ["v1.0"],
-
-    "topbar": {
-        "style": "gradient"
-    },
-
-    "topbarLinks": [
-        {
-            "name": "Support",
-            "url": "support@telepie.com"
-        }
-    ],
-
-    "topbarCtaButton": {
-        "name": "Dashboard",
-        "url": "https://dashboard.telepie.com",
-        "style": "pill"
-    },
-
-    "primaryTab": {
-        "name": "Home"
-    },
-
-    "tabs": [
-        {
-            "name": "WebHooks",
-            "url": "webhooks"
-        }
-    ],
-
-    "navigation": [
-        {
-            "group": "API Documentation",
-            "pages": ["introduction", "api-reference/api-key-auth"]
-        },
-        {
-            "group": "WhatsApp Campaign",
-            "pages": [
-                "api-reference/campaigns/whatsapp/intro",
-                {
-                    "group": "Send Message",
-                    "pages": [
-                        "api-reference/campaigns/whatsapp/message-api/send-text-message",
-                        "api-reference/campaigns/whatsapp/message-api/send-location-message",
-                        "api-reference/campaigns/whatsapp/message-api/send-image-message",
-                        "api-reference/campaigns/whatsapp/message-api/send-document-message",
-                        "api-reference/campaigns/whatsapp/message-api/send-video-message",
-                        "api-reference/campaigns/whatsapp/message-api/send-contact-message",
-                        "api-reference/campaigns/whatsapp/message-api/send-interactive-message",
-                        "api-reference/campaigns/whatsapp/message-api/send-location-request",
-                        "api-reference/campaigns/whatsapp/message-api/send-address-message",
-                        "api-reference/campaigns/whatsapp/message-api/sending-custom-parameters"
-                    ]
-                },
-                {
-                    "group": "Payment API",
-                    "pages": [
-                        "api-reference/campaigns/whatsapp/payment-api/order-details",
-                        "api-reference/campaigns/whatsapp/payment-api/order-status"
-                    ]
-                },
-                {
-                    "group": "Catalogue API",
-                    "pages": [
-                        "api-reference/campaigns/whatsapp/catalogue-api/single-product-catalogue",
-                        "api-reference/campaigns/whatsapp/catalogue-api/multiproduct-catalogue",
-                        "api-reference/campaigns/whatsapp/catalogue-api/create-catalog-product",
-                        "api-reference/campaigns/whatsapp/catalogue-api/update-catalog-product",
-                        "api-reference/campaigns/whatsapp/catalogue-api/delete-catalog-product",
-                        "api-reference/campaigns/whatsapp/catalogue-api/get-catalog-id-using-wabaid"
-                    ]
-                },
-                {
-                    "group": "Send Templates",
-                    "pages": [
-                        "api-reference/campaigns/whatsapp/send-templates/text-template-message",
-                        "api-reference/campaigns/whatsapp/send-templates/media-template-message",
-                        "api-reference/campaigns/whatsapp/send-templates/interactive-template-message",
-                        "api-reference/campaigns/whatsapp/send-templates/interactive-media-template",
-                        "api-reference/campaigns/whatsapp/send-templates/media-template-multiple-button",
-                        "api-reference/campaigns/whatsapp/send-templates/media-template-multibutton-url-placeholder",
-                        "api-reference/campaigns/whatsapp/send-templates/coupon-code-template",
-                        "api-reference/campaigns/whatsapp/send-templates/mpm-template.message",
-                        "api-reference/campaigns/whatsapp/send-templates/limited-time-offer-template",
-                        "api-reference/campaigns/whatsapp/send-templates/carousel-without-body-placeholder",
-                        "api-reference/campaigns/whatsapp/send-templates/carousel-with-body-placeholder",
-                        "api-reference/campaigns/whatsapp/send-templates/create-auth-one-tap-template",
-                        "api-reference/campaigns/whatsapp/send-templates/create-auth-zero-tap-template",
-                        "api-reference/campaigns/whatsapp/send-templates/create-auth-copy-code-template",
-                        "api-reference/campaigns/whatsapp/send-templates/send-auth-template-message"
-                    ]
-                },
-                {
-                    "group": "Template API",
-                    "pages": [
-                        "api-reference/campaigns/whatsapp/template-api/text-template-with-body-and-reply",
-                        "api-reference/campaigns/whatsapp/template-api/text-template-with-body-and-footer",
-                        "api-reference/campaigns/whatsapp/template-api/text-template-with-body-website-and-phone",
-                        "api-reference/campaigns/whatsapp/template-api/image-template-with-body-header-footer",
-                        "api-reference/campaigns/whatsapp/template-api/image-template-with-body-header-footer-visit-website-call",
-                        "api-reference/campaigns/whatsapp/template-api/image-template-with-body-header-footer-replay",
-                        "api-reference/campaigns/whatsapp/template-api/doc-template-with-body-header-footer",
-                        "api-reference/campaigns/whatsapp/template-api/doc-template-with-body-header-footer-visit-website-call",
-                        "api-reference/campaigns/whatsapp/template-api/doc-template-with-body-header-footer-reply",
-                        "api-reference/campaigns/whatsapp/template-api/video-with-body-header-footer",
-                        "api-reference/campaigns/whatsapp/template-api/vidoe-with-body-head-foot-website-call",
-                        "api-reference/campaigns/whatsapp/template-api/video-with-body-head-foot-reply",
-                        "api-reference/campaigns/whatsapp/template-api/image-temp-with-multiple-buttons",
-                        "api-reference/campaigns/whatsapp/template-api/image-template-with-multi-btn-and-dynamic-url",
-                        "api-reference/campaigns/whatsapp/template-api/video-template-with-multiple-buttons",
-                        "api-reference/campaigns/whatsapp/template-api/video-with-multi-btns-and-dynamic-url",
-                        "api-reference/campaigns/whatsapp/template-api/doc-template-with-multi-buttons",
-                        "api-reference/campaigns/whatsapp/template-api/doc-template-with-multi-btns-and-dynamic-url",
-                        "api-reference/campaigns/whatsapp/template-api/location-template-with-multi-buttons",
-                        "api-reference/campaigns/whatsapp/template-api/location-template-with-multi-btns-and-url",
-                        "api-reference/campaigns/whatsapp/template-api/text-template-with-multi-buttons",
-                        "api-reference/campaigns/whatsapp/template-api/text-template-with-multi-btns-and-dynamic-url",
-                        "api-reference/campaigns/whatsapp/template-api/coupon-template",
-                        "api-reference/campaigns/whatsapp/template-api/mpm-template",
-                        "api-reference/campaigns/whatsapp/template-api/image-carousel-without-body-placeholder",
-                        "api-reference/campaigns/whatsapp/template-api/image-carousel-with-body-placeholder",
-                        "api-reference/campaigns/whatsapp/template-api/video-carousel-without-body-placeholder",
-                        "api-reference/campaigns/whatsapp/template-api/video-carousel-with-body-placeholder",
-                        "api-reference/campaigns/whatsapp/template-api/get-template-with-pagination",
-                        "api-reference/campaigns/whatsapp/template-api/get-all-templates",
-                        "api-reference/campaigns/whatsapp/template-api/get-all-template-namespaces",
-                        "api-reference/campaigns/whatsapp/template-api/get-template-with-id",
-                        "api-reference/campaigns/whatsapp/template-api/edit-template",
-                        "api-reference/campaigns/whatsapp/template-api/delete-template-by-name",
-                        "api-reference/campaigns/whatsapp/template-api/delete-template-by-name-and-id",
-                        "api-reference/campaigns/whatsapp/template-api/get-user-details",
-                        "api-reference/campaigns/whatsapp/template-api/mark-message-as-read",
-                        "api-reference/campaigns/whatsapp/template-api/payment-refund"
-                    ]
-                },
-                {
-                    "group": "Misc",
-                    "pages": [
-                        "api-reference/campaigns/whatsapp/misc/fetch-waba-info",
-                        "api-reference/campaigns/whatsapp/misc/set-webhook",
-                        "api-reference/campaigns/whatsapp/misc/get-webhook",
-                        "api-reference/campaigns/whatsapp/misc/set-wa-business-encryption-key",
-                        "api-reference/campaigns/whatsapp/misc/get-wa-business-encryption-key",
-                        "api-reference/campaigns/whatsapp/misc/get-payment-status",
-                        "api-reference/campaigns/whatsapp/misc/get-client-wa-business-accounts",
-                        "api-reference/campaigns/whatsapp/misc/get-wa-business-profile"
-                    ]
-                }
-            ]
-        },
-        {
-            "group": "SMS Campaign",
-            "pages": [
-                "api-reference/campaigns/sms/intro",
-                "api-reference/campaigns/sms/send-single-message",
-                "api-reference//campaigns/sms/send-otp-sms",
-                "api-reference/campaigns/sms/send-bulk-sms",
-                "api-reference/campaigns/sms/send-sms-with-unicode",
-                "api-reference/campaigns/sms/send-flash-sms",
-                "api-reference/campaigns/sms/send-template-sms",
-                "api-reference/campaigns/sms/send-sms-with-template-id",
-
-                {
-                    "group": "Generate and Verify OTP",
-                    "pages": [
-                        "api-reference/campaigns/sms/generate-and-verify-otp/intro",
-                        "api-reference/campaigns/sms/generate-and-verify-otp/generate-otp",
-                        "api-reference/campaigns/sms/generate-and-verify-otp/verify-otp"
-                    ]
-                },
-
-                "api-reference/campaigns/sms/clever-tap-sms/index"
-            ]
-        },
-        {
-            "group": "RCS Campaign",
-            "pages": [
-                "api-reference/campaigns/rcs/get-template-variables",
-                "api-reference/campaigns/rcs/send-rcs-template"
-            ]
-        },
-
-        {
-            "group": "Email Campaign",
-            "pages": [
-                "api-reference/campaigns/email/send-email",
-                "api-reference/campaigns/email/upload-attachment"
-            ]
-        },
-        {
-            "group": "Webhooks",
-            "pages": ["webhooks/index", "webhooks/sms-webhook"]
-        }
-    ],
-
-    "api": {
-        "baseUrl": [
-            "https://partnersv1.pinbot.ai",
-            "https://sms.telepie.io/v1/"
-        ],
-        "playground": {
-            "mode": "show"
-        },
-        "auth": {
-            "method": "key",
-            "name": "apikey"
-        }
-    },
-
-    "seo": {
-        "indexHiddenPages": true
-    },
-
-    "feedback": {
-        "thumbsRating": true
-    },
-
-    "footerSocials": {
-        "x": "https://x.com/telepie",
-        "facebook": "https://www.facebook.com/telepie",
-        "linkedin": "https://www.linkedin.com/company/telepietechnology/"
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Telepie Docs",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light-new.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#0D9373",
+    "light": "#07C983",
+    "dark": "#0D9373",
+    "anchors": {
+      "from": "#0D9373",
+      "to": "#07C983"
     }
+  },
+
+  "versions": ["v1.0"],
+
+  "topbar": {
+    "style": "gradient"
+  },
+
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "support@telepie.com"
+    }
+  ],
+
+  "topbarCtaButton": {
+    "name": "Dashboard",
+    "url": "https://dashboard.telepie.com",
+    "style": "pill"
+  },
+
+  "primaryTab": {
+    "name": "Home"
+  },
+
+  "tabs": [
+    {
+      "name": "WebHooks",
+      "url": "webhooks"
+    }
+  ],
+
+  "navigation": [
+    {
+      "group": "API Documentation",
+      "pages": ["introduction", "api-reference/api-key-auth"]
+    },
+    {
+      "group": "WhatsApp Campaign",
+      "pages": [
+        "api-reference/campaigns/whatsapp/intro",
+        {
+          "group": "Send Message",
+          "pages": [
+            "api-reference/campaigns/whatsapp/message-api/send-text-message",
+            "api-reference/campaigns/whatsapp/message-api/send-location-message",
+            "api-reference/campaigns/whatsapp/message-api/send-image-message",
+            "api-reference/campaigns/whatsapp/message-api/send-document-message",
+            "api-reference/campaigns/whatsapp/message-api/send-video-message",
+            "api-reference/campaigns/whatsapp/message-api/send-contact-message",
+            "api-reference/campaigns/whatsapp/message-api/send-interactive-message",
+            "api-reference/campaigns/whatsapp/message-api/send-location-request",
+            "api-reference/campaigns/whatsapp/message-api/send-address-message",
+            "api-reference/campaigns/whatsapp/message-api/sending-custom-parameters"
+          ]
+        },
+        {
+          "group": "Payment API",
+          "pages": [
+            "api-reference/campaigns/whatsapp/payment-api/order-details",
+            "api-reference/campaigns/whatsapp/payment-api/order-status"
+          ]
+        },
+        {
+          "group": "Catalogue API",
+          "pages": [
+            "api-reference/campaigns/whatsapp/catalogue-api/single-product-catalogue",
+            "api-reference/campaigns/whatsapp/catalogue-api/multiproduct-catalogue",
+            "api-reference/campaigns/whatsapp/catalogue-api/create-catalog-product",
+            "api-reference/campaigns/whatsapp/catalogue-api/update-catalog-product",
+            "api-reference/campaigns/whatsapp/catalogue-api/delete-catalog-product",
+            "api-reference/campaigns/whatsapp/catalogue-api/get-catalog-id-using-wabaid"
+          ]
+        },
+        {
+          "group": "Send Templates",
+          "pages": [
+            "api-reference/campaigns/whatsapp/send-templates/text-template-message",
+            "api-reference/campaigns/whatsapp/send-templates/media-template-message",
+            "api-reference/campaigns/whatsapp/send-templates/interactive-template-message",
+            "api-reference/campaigns/whatsapp/send-templates/interactive-media-template",
+            "api-reference/campaigns/whatsapp/send-templates/media-template-multiple-button",
+            "api-reference/campaigns/whatsapp/send-templates/media-template-multibutton-url-placeholder",
+            "api-reference/campaigns/whatsapp/send-templates/coupon-code-template",
+            "api-reference/campaigns/whatsapp/send-templates/mpm-template.message",
+            "api-reference/campaigns/whatsapp/send-templates/limited-time-offer-template",
+            "api-reference/campaigns/whatsapp/send-templates/carousel-without-body-placeholder",
+            "api-reference/campaigns/whatsapp/send-templates/carousel-with-body-placeholder",
+            "api-reference/campaigns/whatsapp/send-templates/create-auth-one-tap-template",
+            "api-reference/campaigns/whatsapp/send-templates/create-auth-zero-tap-template",
+            "api-reference/campaigns/whatsapp/send-templates/create-auth-copy-code-template",
+            "api-reference/campaigns/whatsapp/send-templates/send-auth-template-message"
+          ]
+        },
+        {
+          "group": "Template API",
+          "pages": [
+            "api-reference/campaigns/whatsapp/template-api/text-template-with-body-and-reply",
+            "api-reference/campaigns/whatsapp/template-api/text-template-with-body-and-footer",
+            "api-reference/campaigns/whatsapp/template-api/text-template-with-body-website-and-phone",
+            "api-reference/campaigns/whatsapp/template-api/image-template-with-body-header-footer",
+            "api-reference/campaigns/whatsapp/template-api/image-template-with-body-header-footer-visit-website-call",
+            "api-reference/campaigns/whatsapp/template-api/image-template-with-body-header-footer-replay",
+            "api-reference/campaigns/whatsapp/template-api/doc-template-with-body-header-footer",
+            "api-reference/campaigns/whatsapp/template-api/doc-template-with-body-header-footer-visit-website-call",
+            "api-reference/campaigns/whatsapp/template-api/doc-template-with-body-header-footer-reply",
+            "api-reference/campaigns/whatsapp/template-api/video-with-body-header-footer",
+            "api-reference/campaigns/whatsapp/template-api/vidoe-with-body-head-foot-website-call",
+            "api-reference/campaigns/whatsapp/template-api/video-with-body-head-foot-reply",
+            "api-reference/campaigns/whatsapp/template-api/image-temp-with-multiple-buttons",
+            "api-reference/campaigns/whatsapp/template-api/image-template-with-multi-btn-and-dynamic-url",
+            "api-reference/campaigns/whatsapp/template-api/video-template-with-multiple-buttons",
+            "api-reference/campaigns/whatsapp/template-api/video-with-multi-btns-and-dynamic-url",
+            "api-reference/campaigns/whatsapp/template-api/doc-template-with-multi-buttons",
+            "api-reference/campaigns/whatsapp/template-api/doc-template-with-multi-btns-and-dynamic-url",
+            "api-reference/campaigns/whatsapp/template-api/location-template-with-multi-buttons",
+            "api-reference/campaigns/whatsapp/template-api/location-template-with-multi-btns-and-url",
+            "api-reference/campaigns/whatsapp/template-api/text-template-with-multi-buttons",
+            "api-reference/campaigns/whatsapp/template-api/text-template-with-multi-btns-and-dynamic-url",
+            "api-reference/campaigns/whatsapp/template-api/coupon-template",
+            "api-reference/campaigns/whatsapp/template-api/mpm-template",
+            "api-reference/campaigns/whatsapp/template-api/image-carousel-without-body-placeholder",
+            "api-reference/campaigns/whatsapp/template-api/image-carousel-with-body-placeholder",
+            "api-reference/campaigns/whatsapp/template-api/video-carousel-without-body-placeholder",
+            "api-reference/campaigns/whatsapp/template-api/video-carousel-with-body-placeholder",
+            "api-reference/campaigns/whatsapp/template-api/get-template-with-pagination",
+            "api-reference/campaigns/whatsapp/template-api/get-all-templates",
+            "api-reference/campaigns/whatsapp/template-api/get-all-template-namespaces",
+            "api-reference/campaigns/whatsapp/template-api/get-template-with-id",
+            "api-reference/campaigns/whatsapp/template-api/edit-template",
+            "api-reference/campaigns/whatsapp/template-api/delete-template-by-name",
+            "api-reference/campaigns/whatsapp/template-api/delete-template-by-name-and-id",
+            "api-reference/campaigns/whatsapp/template-api/get-user-details",
+            "api-reference/campaigns/whatsapp/template-api/mark-message-as-read",
+            "api-reference/campaigns/whatsapp/template-api/payment-refund"
+          ]
+        },
+        {
+          "group": "Misc",
+          "pages": [
+            "api-reference/campaigns/whatsapp/misc/fetch-waba-info",
+            "api-reference/campaigns/whatsapp/misc/set-webhook",
+            "api-reference/campaigns/whatsapp/misc/get-webhook",
+            "api-reference/campaigns/whatsapp/misc/set-wa-business-encryption-key",
+            "api-reference/campaigns/whatsapp/misc/get-wa-business-encryption-key",
+            "api-reference/campaigns/whatsapp/misc/get-payment-status",
+            "api-reference/campaigns/whatsapp/misc/get-client-wa-business-accounts",
+            "api-reference/campaigns/whatsapp/misc/get-wa-business-profile"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "SMS Campaign",
+      "pages": [
+        "api-reference/campaigns/sms/intro",
+        "api-reference/campaigns/sms/send-single-message",
+        "api-reference//campaigns/sms/send-otp-sms",
+        "api-reference/campaigns/sms/send-bulk-sms",
+        "api-reference/campaigns/sms/send-sms-with-unicode",
+        "api-reference/campaigns/sms/send-flash-sms",
+        "api-reference/campaigns/sms/send-template-sms",
+        "api-reference/campaigns/sms/send-sms-with-template-id",
+
+        {
+          "group": "Generate and Verify OTP",
+          "pages": [
+            "api-reference/campaigns/sms/generate-and-verify-otp/intro",
+            "api-reference/campaigns/sms/generate-and-verify-otp/generate-otp",
+            "api-reference/campaigns/sms/generate-and-verify-otp/verify-otp"
+          ]
+        },
+
+        "api-reference/campaigns/sms/clever-tap-sms/index"
+      ]
+    },
+    {
+      "group": "RCS Campaign",
+      "pages": [
+        "api-reference/campaigns/rcs/get-template-variables",
+        "api-reference/campaigns/rcs/send-rcs-template"
+      ]
+    },
+
+    {
+      "group": "Email Campaign",
+      "pages": [
+        "api-reference/campaigns/email/send-email",
+        "api-reference/campaigns/email/upload-attachment"
+      ]
+    },
+    {
+      "group": "Webhooks",
+      "pages": ["webhooks/index", "webhooks/sms-webhook"]
+    }
+  ],
+
+  "api": {
+    "baseUrl": ["https://one.telepie.com", "https://sms.telepie.io/v1/"],
+    "playground": {
+      "mode": "show"
+    },
+    "auth": {
+      "method": "key",
+      "name": "apikey"
+    }
+  },
+
+  "seo": {
+    "indexHiddenPages": true
+  },
+
+  "feedback": {
+    "thumbsRating": true
+  },
+
+  "footerSocials": {
+    "x": "https://x.com/telepie",
+    "facebook": "https://www.facebook.com/telepie",
+    "linkedin": "https://www.linkedin.com/company/telepietechnology/"
+  }
 }
